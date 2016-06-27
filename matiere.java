@@ -4,4 +4,7 @@ public class matiere {
 	public matiere(String nomMatiere){
 		this.nomMatiere = nomMatiere;
 	}
+	public String toString(){
+		return "Nom matière: " +nomMatiere;
+	}
 }
