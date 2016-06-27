@@ -9,4 +9,8 @@ public class note {
 			this.eleve=eleve;
 			this.matiere = matiere;
 		}
+		
+	public String toString(){
+			return "Note: " +valeurNote;
+		}
 }
