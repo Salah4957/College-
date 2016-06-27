@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class lesMatieres {
+public class gestionnaireMatieres {
 	static ArrayList <matiere> mat = new ArrayList<matiere>();
 	
 	public void ajouteMatiere(matiere m){
