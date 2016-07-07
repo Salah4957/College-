@@ -5,26 +5,54 @@ public class Menu {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		int i;
-		System.out.println("|--------------MENU------------------|\n");
-		System.out.println("| 1 - Afficher les listes pour gérer |\n");
-		System.out.println("| 2 - Afficher le bulletin par élève |\n");
-		System.out.println("| 3 - Afficher les classements       |\n");
-		System.out.println("| 4 - Afficher les moyennes          |\n");
-		System.out.println("| 0 - Quitter                        |\n");
+		i =48;
+		while (i!=0){
+			System.out.println("|--------------MENU------------------|\n");
+			System.out.println("| 1 - Afficher les listes pour gérer |\n");
+			System.out.println("| 2 - Afficher le bulletin par élève |\n");
+			System.out.println("| 3 - Afficher les classements       |\n");
+			System.out.println("| 4 - Afficher les moyennes          |\n");
+			System.out.println("| 5 - Acces rapide                   |\n");
+			System.out.println("| 0 - Quitter                        |\n");
+			System.out.println("Choix :");
+			Scanner scan = new Scanner(System.in);
+			i = scan.nextInt();
+			switch (i){
+			case 1:
+				lister();
+				break;
+			case 2:
+				bulletin();
+				break;
+			case 3:
+				classement();
+				break;
+			case 4:moyenne();
+				break;
+			case 5 : accesRapide();
+				break;
+			case 0:
+				System.out.println ("Aurevoir \n");
+				break;
+			default: 
+				System.out.println("Choisi erreur\n");
+			}
+		
+		}
+
+	}
+
+	private static void accesRapide() {
+		int r;
+		System.out.println("|-----Acces Rapide-------|\n");
+		System.out.println("| 1 - Signaler un absence|\n");
+		System.out.println("| 0 - Quitter            |\n");
 		System.out.println("Choix :");
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
-		i = scan.nextInt();
-		switch (i){
+		r = scan.nextInt();
+		switch (r){
 		case 1:
-			lister();
-			break;
-		case 2:
-			bulletin();
-			break;
-		case 3:
-			classement();
-			break;
-		case 4:moyenne();
 			break;
 		case 0:
 			System.out.println ("Aurevoir \n");
@@ -32,7 +60,7 @@ public class Menu {
 		default: 
 			System.out.println("Choisi erreur\n");
 		}
-
+		
 	}
 
 	private static void moyenne() {
@@ -168,8 +196,6 @@ public class Menu {
 			break;
 		default:
 			System.out.println("Erreur choisi");
-		}
-		
+		}	
 	}
-
 }
