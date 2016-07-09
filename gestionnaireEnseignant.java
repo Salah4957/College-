@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class gestionnaireEnseignants {
+public class gestionnaireEnseignant {
 	static ArrayList <enseignant> ens = new ArrayList<enseignant>();
 	
 	public void ajouteEnseignant(enseignant p){
