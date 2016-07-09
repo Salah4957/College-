@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 
 public class ecole{
-	private ArrayList<enseignat> profs = new ArrayList<enseignat>();
+	private ArrayList<enseignant> profs = new ArrayList<enseignant>();
 	String nomEcole;
 
-	public void ajoutEnseignat(enseignat a){
+	public void ajoutEnseignat(enseignant a){
 		profs.add(a);
 	}
 	public String toString(){
 		StringBuilder s = new StringBuilder();
-		for(enseignat a: enseignat){
+		for(enseignant a: profs){
 			s.append(a.toString()).append("\n");
 		}
 		return s.toString();
