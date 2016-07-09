@@ -1,6 +1,6 @@
 	import java.util.ArrayList;
 
-	public class gestionnaireEleves {
+	public class gestionnaireEleve {
 		static ArrayList <eleve> eleves = new ArrayList<eleve>();
 		
 		public void ajouteEleve(eleve el){
