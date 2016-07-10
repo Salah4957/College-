@@ -10,7 +10,9 @@ public class note {
 			this.matiere = matiere;
 		}
 		
-	public String toString(){
-			return "Note: " +valeurNote;
+		public String toString(){
+			return valeurNote+ " ";
 		}
+
+
 }
