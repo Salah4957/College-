@@ -1,18 +1,40 @@
 import java.util.ArrayList;
 
 public class gestionnaireNotes {
-	static ArrayList <note> notes = new ArrayList <note>();
+ 
+	static ArrayList <note> notes = null;
 	
-	
-	public void ajouteNote(note n){
-		notes.add(n);
+	public gestionnaireNotes(){
+		if(notes==null)
+			notes = new ArrayList<note>();
 	}
 	
-	public String toString(){
-		StringBuilder s = new StringBuilder();
-		for(note n: notes){
-			s.append(n.toString()).append("\n");
+	// récupère liste de toutes les notes d'un élève 
+	public ArrayList <note> recupNotesEleve(eleve e){
+		ArrayList <note> noteEleve = new ArrayList <note>();
+		for (note n: notes){
+			if (n.eleve==e){
+				noteEleve.add(n);
+			}
 		}
-		return s.toString();
+		return noteEleve;
 	}
+	
+	// récupère liste de toutes les notes d'un élève dans une matière
+	public ArrayList <note> recupNotesEleveMat(eleve e, matiere m){
+		ArrayList <note> noteEleveMat = new ArrayList <note>();
+		for (note n: notes){
+			if (n.eleve==e && n.matiere==m){
+				noteEleveMat.add(n);
+			}
+		}
+		return noteEleveMat;
+	}
+	
+	
+	// Ajouter une note dans la liste des notes
+		public void ajouter(note n){
+			notes.add(n);
+		}
 }
+
