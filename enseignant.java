@@ -16,6 +16,16 @@ public class enseignant extends personne{
 	public String toString(){
 		return super.nom+" "+super.prenom+", NUMEN: "+numen+", professeur de "+matiere;
 	}
-
+	//Modifier matiere
+	//getters
+	public matiere getMatiere(){
+		return this.matiere;
+	}
+	//setters
+	public void setMatiere(matiere x){ 
+				
+		matiere = x;     
+									
+	}
 }
 
