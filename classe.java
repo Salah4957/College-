@@ -156,5 +156,9 @@ public class classe {
 		}
 		return s;
 	}
-	
+	//supprimé éléve
+	public void supEleve(eleve a){
+		eleves.remove(a);
+		
+	}
 }
