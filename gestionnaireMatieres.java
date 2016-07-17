@@ -15,14 +15,14 @@ public class gestionnaireMatieres {
 	}
 	
 	/**Recherche Matière**/
-	public String rechMat(matiere m){
+	public String rechMat(String m){
 	String s = "";
 	for (matiere mati : mat){
-		if( mati == m ){
+		if( mati.nomMatiere == m ){
 			s += m;
 		}
 	}
-	if (s != NULL)
+	if (s != null)
 		return s;
 	else
 		return "Aucun résultat trouvé";
