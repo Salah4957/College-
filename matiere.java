@@ -8,6 +8,6 @@ public class matiere {
 		return "Nom matière: " +nomMatiere;
 	}
 	public String getMatiere(){
-		return this.matiere;
+		return this.nomMatiere;
 	}
 }
