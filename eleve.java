@@ -44,13 +44,12 @@ public class eleve extends personne{
 	//Calculer la moyenne des notes dans chaque matière
 		public Double moyenneMat(matiere m){
 			gestionnaireNotes g = new gestionnaireNotes();
-			g.recupNotesEleveMat(this, m); 
 			ArrayList <note> notes = g.recupNotesEleveMat(this, m);
 			Double cumul = 0.0;
 			for (int i=0; i<notes.size(); i++){
 				cumul+=notes.get(i).valeurNote; // récupérer la valeur de la note à l'indice i de la liste notes
 			}
-				return cumul/notes.size();
+			return cumul/notes.size();
 		}
 	
 
