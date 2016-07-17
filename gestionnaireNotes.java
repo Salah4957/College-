@@ -13,7 +13,7 @@ public class gestionnaireNotes {
 	public ArrayList <note> recupNotesEleve(eleve e){
 		ArrayList <note> noteEleve = new ArrayList <note>();
 		for (note n: notes){
-			if (n.eleve==e){
+			if (n.eleve ==e){
 				noteEleve.add(n);
 			}
 		}
@@ -24,7 +24,7 @@ public class gestionnaireNotes {
 	public ArrayList <note> recupNotesEleveMat(eleve e, matiere m){
 		ArrayList <note> noteEleveMat = new ArrayList <note>();
 		for (note n: notes){
-			if (n.eleve==e && n.matiere==m){
+			if (n.eleve == e  && n.matiere==m){
 				noteEleveMat.add(n);
 			}
 		}
