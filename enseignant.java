@@ -9,7 +9,8 @@ public class enseignant extends personne{
 		}
 	
 	public String toString(){
-		return super.nom+", "+super.prenom+", "+numen+", "+matiere;
+		return super.nom+" "+super.prenom+", NUMEN: "+numen+", professeur de "+matiere;
 	}
 
 }
+
