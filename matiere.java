@@ -7,4 +7,7 @@ public class matiere {
 	public String toString(){
 		return "Nom matière: " +nomMatiere;
 	}
+	public String getMatiere(){
+		return this.matiere;
+	}
 }
