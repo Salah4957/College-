@@ -8,6 +8,11 @@ public class enseignant extends personne{
 		this.matiere=matiere; 
 		}
 	
+	//getter
+	public int getNumen(){
+		return this.numen;
+	}
+	
 	public String toString(){
 		return super.nom+" "+super.prenom+", NUMEN: "+numen+", professeur de "+matiere;
 	}
