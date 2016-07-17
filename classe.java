@@ -112,7 +112,7 @@ public class classe {
 	}
 	
 	/**fonction de recherche class Classe**/
-public String rechEleve(eleve e){
+	public String rechEleve(eleve e){
 	String s = "";
 	for (eleve el : eleves){
 		if( el.getIne == e.getIne ){
@@ -123,10 +123,10 @@ public String rechEleve(eleve e){
 		return s;
 	else
 		return "Aucun résultat trouvé";
-}
+	}
 
-/**Recherche prof - Enseignant **/
-public String rechEnseignant(enseignant e){
+	/**Recherche prof - Enseignant **/
+	public String rechEnseignant(enseignant e){
 	String s = "";
 	for (enseignant prof : ens){
 		if( prof.getNumen == e.getNumen ){
@@ -137,6 +137,24 @@ public String rechEnseignant(enseignant e){
 		return s;
 	else
 		return "Aucun résultat trouvé";
-}
+	}
+	
+	/** Afficher tous les élèves d'une classe **/
+	public String AffichEleve(){
+		String s = new String();
+		for(eleve el : eleves ){
+				s= el+"\n";
+		}
+		return s;
+	}
+	
+	/** Afficher tous les enseignants d'une classe **/
+	public String AfficheEnseignant(){
+		String s = new String();
+		for(enseignant prof : ens ){
+				s= prof+"\n";
+		}
+		return s;
+	}
 	
 }
