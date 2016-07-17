@@ -86,6 +86,29 @@ public class classe {
 		}
 		return Eleves; 
 	}
-
+	//Modifier classe
+	//getters
+	public String getNomClasse(){
+		return this.nomClasse;
+	}
+	public int getNiveau(){
+		return this.niveau;
+	}
+	public String getProfPrincipal(){
+		return this.profPrincipal;
+	}
+	//Setters
+	public void setNomClasse(String x){
+		nomClasse = x;
+		
+	}
+	public void setNiveau(int x){
+		niveau = x;
+		
+	}
+	public void setProfPrincipal(String x){
+		profPrincipal = x;
+		
+	}
 	
 }
