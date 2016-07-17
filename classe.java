@@ -14,8 +14,10 @@ public class classe {
 	
 	// constructeur 2
 	public classe (ArrayList eleve, ArrayList enseignant, String profPrincipal, int niveau, String nomClasse){
-		this.eleves = eleve; 
-		this.ens = enseignant; 
+		if(eleve != null)
+			this.eleves = eleve; 
+		if(enseignant != null)
+			this.ens = enseignant; 
 		this.profPrincipal=profPrincipal;
 		this.niveau=niveau; 
 		this.nomClasse= nomClasse;
@@ -50,7 +52,6 @@ public class classe {
 		Double somme = 0.0;
 		for (int i=0; i<eleves.size(); i++){
 			somme+=eleves.get(i).moyenneMat(m);
-			
 		}
 		return somme/eleves.size();
 	}
