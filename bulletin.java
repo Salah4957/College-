@@ -46,15 +46,16 @@ public class bulletin {
 	
 	// création note
 	note n0 = new note(12, e0, m);
+	note n20 = new note(8, e6, m3);
 	note n1 = new note(14, e0, m1);
 	note n2 = new note(16, e1, m);
 	note n3 = new note(18, e1, m1);
 	note n4 = new note(8, e2, m);
-	note n5 = new note(11, e2, m2);
+	note n5 = new note(11, e2, m1);
 	note n6 = new note(18, e3, m);
 	note n7 = new note(14, e3, m);
 	note n8 = new note(11, e3, m1);
-	note n9 = new note(12, e0, m);
+	note n9 = new note(12, e0, m1);
 	note n10 = new note(14, e0, m1);
 	note n11 = new note(16, e1, m);
 	note n12 = new note(18, e1, m3);
@@ -65,17 +66,17 @@ public class bulletin {
 	note n17 = new note(16, e3, m1);
 	note n18 = new note(11, e4, m2);
 	note n19 = new note(15, e5, m);
-	note n20 = new note(8, e6, m3);
-	note n21 = new note(18, e7, m);
+	
+	note n21 = new note(18, e7, m); 
 	note n22 = new note(8, e8, m);
 	note n23 = new note(12, e9, m2);
 	note n24 = new note(11, e10, m1);
 	note n25 = new note(18, e11, m);
-	note n26 = new note(18, e12, m3);
+	note n26 = new note(12, e12, m3);
 	// ajout note
 	gestionnaireNotes releve = new gestionnaireNotes();
 	releve.ajouter(n0);
-	releve.ajouter(n1);
+	releve.ajouter(n20);
 	releve.ajouter(n2);
 	releve.ajouter(n3);
 	releve.ajouter(n4);
@@ -94,7 +95,7 @@ public class bulletin {
 	releve.ajouter(n17);
 	releve.ajouter(n18);
 	releve.ajouter(n19);
-	releve.ajouter(n20);
+	releve.ajouter(n1);
 	releve.ajouter(n21);
 	releve.ajouter(n22);
 	releve.ajouter(n23);
@@ -109,13 +110,11 @@ public class bulletin {
 	profs.ajouteEnseignant(p1);
 
 	// création classe
-	ArrayList <eleve> el = new ArrayList<eleve>();
-	ArrayList <enseignant> ens = new ArrayList<enseignant>();
-	classe classe6A = new classe(el, ens, "Blala", 6, "6A");
-	classe classe6B = new classe(el, ens, "Martin", 6, "6B");
-	classe classe6C = new classe(el, ens, "Durand", 6, "6C");
-	classe classe5A = new classe(el, ens, "Dupont", 5, "5A");
-	classe classe5B = new classe(el, ens, "Roca", 5, "5B");
+	classe classe6A = new classe(null, null, "Blala", 6, "6A");
+	classe classe6B = new classe(null, null, "Martin", 6, "6B");
+	classe classe6C = new classe(null, null, "Durand", 6, "6C");
+	classe classe5A = new classe(null, null, "Dupont", 5, "5A");
+	classe classe5B = new classe(null, null, "Roca", 5, "5B");
 	gestionnaireClasses college = new gestionnaireClasses();
 	college.ajouteClasse(classe6A);
 	college.ajouteClasse(classe6B);
@@ -135,20 +134,25 @@ public class bulletin {
 	classe6C.ajoutEleve(e5);
 	classe5A.ajoutEleve(e6);
 	classe5B.ajoutEleve(e7);
-	classe6A.ajoutEleve(e8);
-	classe6A.ajoutEleve(e9);
-	classe6A.ajoutEleve(e10);
-	classe6A.ajoutEleve(e11);
+	classe6B.ajoutEleve(e8);
+	classe6B.ajoutEleve(e9);
+	classe6B.ajoutEleve(e10);
+	classe6B.ajoutEleve(e11);
 	classe6B.ajoutEleve(e12);
 	System.out.println("Liste des élèves :");
 	System.out.println(g.toString());
+	//classement 6A
 	ArrayList <eleve> classement6A = classe6A.classementClasse();
 	System.out.println(classement6A);
+	// classement 6A en svt
 	ArrayList <eleve> classementMat6A = classe6A.classementClasseMat(m1);
 	System.out.println(classementMat6A);
-	ArrayList <classe> classement6 = college.classementNiveau();
+	//classement des 6e
+	ArrayList <classe> classement6 = college.classementNiveau(6);
 	System.out.println(classement6);
-	ArrayList <classe> classementMat6 = college.classementNivMat(m1);
+	// classement des 6e en svt
+	ArrayList <classe> classementMat6 = college.classementNivMat(m1, 6);
+	System.out.println("Classement des 6A en svt :");
 	System.out.println(classementMat6);
 	
 	
@@ -158,14 +162,27 @@ public class bulletin {
 	System.out.println("Moy de E0 :"+e0.moyenne());
 	System.out.println("Moy de E0 en " +m+ ":"); 
 	System.out.println(e0.moyenneMat(m));
+	System.out.println("Moy de E1 en " +m+ ":"); 
+	System.out.println(e1.moyenneMat(m));
+	System.out.println("Moy de E2 en " +m+ ":"); 
+	System.out.println(e2.moyenneMat(m));
+	System.out.println("Moy de E3 en " +m+ ":"); 
+	System.out.println(e3.moyenneMat(m));
 	//System.out.println(n2);
 	//System.out.println(n3);
 	System.out.println("Moy de E0 en " +m1+ ":");
 	System.out.println(e0.moyenneMat(m1));
+	System.out.println("Moy de E1 en " +m1+ ":");
+	System.out.println(e1.moyenneMat(m1));
+	System.out.println("Moy de E2 en " +m1+ ":");
+	System.out.println(e2.moyenneMat(m1));
+	System.out.println("Moy de E3 en " +m1+ ":");
+	System.out.println(e3.moyenneMat(m1));
 	System.out.println("Moy des 6A : " +classe6A.moyenneClasse());
 	System.out.println("Moy des 6A en maths: " +classe6A.moyenneClasseMat(m));
 	System.out.println("Moy des 6A en svt: " +classe6A.moyenneClasseMat(m1));
 	System.out.println("Moy des 6 : " +college.moyenneNiveau(6));
+	System.out.println("Moy des 5 : " +college.moyenneNiveau(5));
 	System.out.println("\n");
 	
 	// MATIERE
