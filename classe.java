@@ -111,29 +111,29 @@ public class classe {
 		
 	}
 	
-	/**fonction de recherche class Classe**/
-	public String rechEleve(eleve e){
+	/**Recherche eleve**/
+	public String rechEleve(int e){
 	String s = "";
 	for (eleve el : eleves){
-		if( el.getIne == e.getIne ){
+		if( el.ine == e ){
 			s += e;
 		}
 	}
-	if (s != NULL)
+	if (s != null)
 		return s;
 	else
 		return "Aucun résultat trouvé";
 	}
 
 	/**Recherche prof - Enseignant **/
-	public String rechEnseignant(enseignant e){
+	public String rechEnseignant(int e){
 	String s = "";
 	for (enseignant prof : ens){
-		if( prof.getNumen == e.getNumen ){
+		if( prof.numen == e){
 			s += e;
 		}
 	}
-	if (s != NULL)
+	if (s != null)
 		return s;
 	else
 		return "Aucun résultat trouvé";
