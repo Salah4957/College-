@@ -17,6 +17,11 @@ public class eleve extends personne{
 		this.absence=absence;
 	}
 	
+	//getter
+	public int getIne(){
+		return this.ine;
+	}
+	
 	// Afficher
 	public String toString(){
 		String s= super.nom+", "+super.prenom+", "+super.dateNaissance+", "+super.adresse+", "+ine; 
