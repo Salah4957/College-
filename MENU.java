@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Menu {
+public class MENU {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
