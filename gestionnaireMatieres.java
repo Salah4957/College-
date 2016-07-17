@@ -12,5 +12,19 @@ public class gestionnaireMatieres {
 		for(matiere m : mat)
 			s+=m;
 	        return s;
-}
+	}
+	
+	/**Recherche Matière**/
+	public String rechMat(matiere m){
+	String s = "";
+	for (matiere mati : mat){
+		if( mati == m ){
+			s += m;
+		}
+	}
+	if (s != NULL)
+		return s;
+	else
+		return "Aucun résultat trouvé";
+	}
 }
