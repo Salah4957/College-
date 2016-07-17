@@ -1,6 +1,7 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MENU {
+public class Menu {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
@@ -33,14 +34,24 @@ public class MENU {
 			case 5 : accesRapide();
 				break;
 			case 0:
-				System.out.println ("Au revoir");
+				AuRevoir();
 				break;
-			default: 
-				System.out.println("Erreur");
+			default:
+				erreur();
+				
 			}
 		
 		}
 
+	}
+
+	private static void erreur() {
+		System.out.println("Erreur");
+	}
+
+	private static void AuRevoir() {
+		System.out.println ("Au revoir");
+		
 	}
 
 	private static void accesRapide() {
@@ -57,10 +68,10 @@ public class MENU {
 		case 1:
 			break;
 		case 0:
-			System.out.println ("Au revoir \n");
+			AuRevoir();
 			break;
 		default: 
-			System.out.println("Erreur\n");
+			erreur();
 		}
 		
 	}
@@ -86,10 +97,10 @@ public class MENU {
 			moyMat();
 			break;
 		case 0:
-			System.out.println ("Au revoir \n");
+			AuRevoir();
 			break;
 		default: 
-			System.out.println("Erreur\n");
+			erreur();
 		}
 		
 	}
@@ -113,10 +124,10 @@ public class MENU {
 		case 2:
 			break;
 		case 0:
-			System.out.println ("Au revoir \n");
+			AuRevoir();
 			break;
 		default: 
-			System.out.println("Erreur\n");
+			erreur();
 		}
 		
 	}
@@ -142,21 +153,21 @@ public class MENU {
 			claMatiere();
 			break;
 		case 0:
-			System.out.println ("Aurevoir \n");
+			AuRevoir();
 			break;
 		default: 
-			System.out.println("Erreur\n");
+			erreur();
 		}
 		
 	}
 
 	private static void claMatiere() {
 		int c;
-		System.out.println("|--------------------Classement du matière---------------------------|");
-		System.out.println("| 1 - Afficher le classement par matière dans une classe             |");
-		System.out.println("| 2 - Afficher le classement par matière d'une classe dans un niveau |");
-		System.out.println("| 0 - Quitter                        	                             |");
-		System.out.println("|--------------------------------------------------------------------|");
+		System.out.println("|--------------------Classement du matière--------------------------|");
+		System.out.println("| 1 - Afficher le classement par matière dans une classe            |");
+		System.out.println("| 2 - Afficher le classement par matière d'une classe dans un niveau|");
+		System.out.println("| 0 - Quitter                        	                            |");
+		System.out.println("|-------------------------------------------------------------------|");
 		System.out.println("Choix :");
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
@@ -167,10 +178,10 @@ public class MENU {
 		case 2:
 			break;
 		case 0:
-			System.out.println ("Au revoir \n");
+			AuRevoir();
 			break;
 		default: 
-			System.out.println("Choisi erreur\n");
+			erreur();
 		}
 	}
 
@@ -181,12 +192,13 @@ public class MENU {
 // pour afficher les listes
 	private static void lister() {
 		int a;
-		System.out.println("|----Affichage et gestion des données----|");
-		System.out.println("|1 - Accès aux élèves                    |");
-		System.out.println("|2 - Accès aux enseignants               |");
-		System.out.println("|3 - Accès aux matières                  |");
-		System.out.println("|0 - Quitter                             |");
-		System.out.println("|----------------------------------------|");
+		System.out.println("|-Affichage et gestion des données-|");
+		System.out.println("|1 - Accès aux élèves              |");
+		System.out.println("|2 - Accès aux enseignants         |");
+		System.out.println("|3 - Accès aux matières            |");
+		System.out.println("|4 - Accès aux classes             |");
+		System.out.println("|0 - Quitter                       |");
+		System.out.println("|----------------------------------|");
 		System.out.println("Choix :");
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
@@ -200,52 +212,87 @@ public class MENU {
 		case 3:
 			accesMat();
 			break;
+		case 4: accesClasse();
+			break;
 		case 0:
-			System.out.println ("Au revoir \n");
+			AuRevoir();
 			break;
 		default:
-			System.out.println("Erreur");
+			erreur();
 		}	
 	}
 
 
 
-private static void accesMat() {
-	gestionnaireMat();
-	System.out.println("Choisir une matière");
-	int k;
-	System.out.println("|---------Liste des matières----------|");
-	System.out.println("|1 - Modifier                         |");
-	System.out.println("|2 - Afficher les élèves d'une classe |");
-	System.out.println("|3 - Afficher les élèves d'un niveau  |");
-	System.out.println("|0 - Quitter                          |");
-	System.out.println("|-------------------------------------|");
+private static void accesClasse() {
+	int y;
+	System.out.println("|---Accès aux classes----|");
+	System.out.println("|1 - Afficher une classe |");
+	System.out.println("|2 - Modifier une classe |");
+	System.out.println("|0 - Quitter             |");
+	System.out.println("|------------------------|");
 	System.out.println("Choix :");
 	@SuppressWarnings("resource")
 	Scanner scan = new Scanner(System.in);
-	k = scan.nextInt();
-	switch (k){
+	y = scan.nextInt();
+	switch (y){
 	case 1:
-		recherEleve();
 		break;
 	case 2:
-		recherClasse();
-		break;
-	case 3:recherNiveau();
 		break;
 	case 0:
-		System.out.println ("Au revoir \n");
+		AuRevoir();
 		break;
 	default:
-		System.out.println("Erreur choisi");
+		erreur();
 	}	
 		
 	}
 
-private static void gestionnaireMat() {
-	// TODO Auto-generated method stub
+
+@SuppressWarnings("unused")
+public static void accesMat() {
+	System.out.println("Liste des matières :");
+	matiere m = new matiere("maths");
+	matiere m1 = new matiere("SVT");
+	matiere m2 = new matiere("histoire");
+	matiere m3 = new matiere("anglais");
+	// création liste matière
+	gestionnaireMatieres mat = new gestionnaireMatieres();
+	mat.ajouteMatiere(m);
+	mat.ajouteMatiere(m1);
+	mat.ajouteMatiere(m2);
+	mat.ajouteMatiere(m3);
+	System.out.println(mat);
+
+	System.out.println("Choisir une matière");
+	@SuppressWarnings("resource")
+	Scanner scan = new Scanner(System.in);
+	String s = scan.nextLine();
+	mat.rechMat(s);
 	
-}
+	int k;
+	System.out.println("|----Liste des matières-----|");
+	System.out.println("| 1 - Modifier              |");
+	System.out.println("| 0 - Quitter               |");
+	System.out.println("|---------------------------|");
+	System.out.println("Choix :");
+	Scanner scan1 = new Scanner(System.in);
+	k = scan1.nextInt();
+	switch (k){
+	case 1:
+		
+		break;
+	case 0:AuRevoir();
+		break;
+	default:
+		erreur();
+	}	
+		
+	}
+
+
+//gestion des eleves
 
 private static void accesEleve() {
 	int m;
@@ -269,10 +316,10 @@ private static void accesEleve() {
 	case 3:recherNiveau();
 		break;
 	case 0:
-		System.out.println ("Au revoir \n");
+		AuRevoir();
 		break;
 	default:
-		System.out.println("Erreur choisi");
+		erreur();
 	}	
 	
 }
@@ -291,6 +338,8 @@ private static void recherEleve() {
 	System.out.println("Saisir l'INE d'un élève");
 	
 }
+
+//gestion des enseignants
 
 private static void accesEnseignant() {
 	int n;
@@ -311,10 +360,10 @@ private static void accesEnseignant() {
 		afficherListeEns();
 		break;
 	case 0:
-		System.out.println ("Au revoir \n");
+		AuRevoir();
 		break;
 	default:
-		System.out.println("Erreur choisi");
+		erreur();
 	}	
 	
 }
