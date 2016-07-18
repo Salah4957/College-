@@ -5,7 +5,7 @@ Eleve:
 - dateNaissance
 - adresse
 - absence
-- IdClasse (FOREIGN)
+- NomClasse (FOREIGN)
 
 Enseignant:
 - numen (PRIMARY)
@@ -13,20 +13,15 @@ Enseignant:
 - prenom
 - dateNaissance
 - adresse
-- IdMatiere (FOREIGN)
-- IdClasse (FOREIGN)
-
-Matiere:
-- IdMatiere (PRIMARY)
-- NomMatiere
+- Matiere
+- NomClasse (FOREIGN)
 
 Note:
-- IdMatiere (FOREIGN)
+- Matiere (FOREIGN)
 - ine (FOREIGN)
 - note
 
 Classe:
-- IdClasse (PRIMARY)
-- NomClasse
+- NomClasse (PRIMARY)
 - ProfPrincipal (FOREIGN)
 
