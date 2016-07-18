@@ -1,0 +1,32 @@
+Eleve:
+- ine (PRIMARY)
+- nom
+- prenom
+- dateNaissance
+- adresse
+- absence
+- IdClasse (FOREIGN)
+
+Enseignant:
+- numen (PRIMARY)
+- nom
+- prenom
+- dateNaissance
+- adresse
+- IdMatiere (FOREIGN)
+- IdClasse (FOREIGN)
+
+Matiere:
+- IdMatiere (PRIMARY)
+- NomMatiere
+
+Note:
+- IdMatiere (FOREIGN)
+- ine (FOREIGN)
+- note
+
+Classe:
+- IdClasse (PRIMARY)
+- NomClasse
+- ProfPrincipal (FOREIGN)
+
