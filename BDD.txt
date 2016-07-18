@@ -19,6 +19,7 @@ Enseignant:
 Note:
 - Matiere (FOREIGN)
 - ine (FOREIGN)
+- nomClasse (FOREIGN)???
 - note
 
 Classe:
