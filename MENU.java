@@ -1,10 +1,14 @@
-import java.util.ArrayList;
+package college;
+
 import java.util.Scanner;
 
-public class Menu {
+public class menu {
 
-	@SuppressWarnings("resource")
 	public static void main(String[] args) {
+		// recharger données de la BDD au début
+		// faire autant d'ajouts qu'il y a de lignes dans bdd vers chaque gestionnaire : 5 boucles
+		// pour la BDD on ne peut pas faire d'arraylist
+		// ex : table élève, classe = clé étrangère
 		int i;
 		i =48;
 		while (i!=0){
@@ -14,6 +18,7 @@ public class Menu {
 			System.out.println("| 3 - Effectuer un classement          |");
 			System.out.println("| 4 - Calculer une moyenne             |");
 			System.out.println("| 5 - Acces rapide                     |");
+			System.out.println("| 6 - Ajouter des données              |");
 			System.out.println("| 0 - Quitter                          |");
 			System.out.println("+--------------------------------------+");
 			System.out.println("Choix :");
@@ -33,6 +38,8 @@ public class Menu {
 				break;
 			case 5 : accesRapide();
 				break;
+			case 6 : ajout();
+				break;
 			case 0:
 				AuRevoir();
 				break;
@@ -44,16 +51,149 @@ public class Menu {
 		}
 
 	}
+	
+	//====================================================================================================================================================================================
+	//=============================================================================AJOUT DONNEES==========================================================================================
+	//====================================================================================================================================================================================
+	private static void ajout() {
+		int j;
+		System.out.println("|-----Ajouter des données--------|");
+		System.out.println("| 1 - Données élèves 			 |");
+		System.out.println("| 2 - Données enseignants        |");
+		System.out.println("| 3 - Données classes            |");
+		System.out.println("| 4 - Données matières           |");
+		System.out.println("| 5 - Données notes              |");
+		System.out.println("| 0 - Quitter                    |");
+		System.out.println("|--------------------------------|");
+		System.out.println("Choix :");
+		Scanner scan = new Scanner(System.in);
+		j = scan.nextInt();
+		switch (j){
+		case 1:
+			ajoutEleve();
+			break;
+		case 2:
+			ajoutEnseignant();
+			break;
+		case 3:
+			ajoutClasse();
+			break;
+		case 4:
+			ajoutMatiere();
+			break;
+		case 5:
+			ajoutNote();
+			break;
+		case 0:
+			AuRevoir();
+			break;
+		default: 
+			erreur();
+		}
+	}
+	
+	// ajout note
+	private static void ajoutNote() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ajout d'une note");
+		System.out.println("Saisir la note: ");
+		int valeurNote = sc.nextInt();
+		System.out.println("Saisir l'élève (INE): ");
+		int ine = sc.nextInt();
+		System.out.println("Saisir la matière: ");
+		String nomMat = sc.nextLine();
+	}
+	
+	// ajout matière
+	private static void ajoutMatiere() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ajout d'une matière");
+		System.out.println("Saisir le nom de la matière: ");
+		String nomMat = sc.nextLine();
+		gestionnaireMatieres m = new gestionnaireMatieres();
+		matiere mat = new matiere(nomMat);
+		m.ajouteMatiere(mat);
+	}
+
+	// ajout enseignant
+	private static void ajoutEnseignant() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ajout d'un enseignant");
+		System.out.println("Saisir les données suivantes: ");
+		System.out.println("Nom: ");
+		String nomP = sc.nextLine();
+		System.out.println("Prenom: ");
+		String prenomP = sc.nextLine();
+		System.out.println("Date de naissance: ");
+		String dateP = sc.nextLine();
+		System.out.println("Adresse: ");
+		String adresseP = sc.nextLine();
+		System.out.println("NUMEN : ");
+		int numen = sc.nextInt();
+		System.out.println("Matière: ");
+		String matiere = sc.nextLine();
+		gestionnaireMatieres m = new gestionnaireMatieres();
+		matiere mat = m.rechMat(matiere);
+		if (mat == null){
+			mat = new matiere(matiere);
+			m.ajouteMatiere(mat);		
+		}
+		gestionnaireEnseignants p = new gestionnaireEnseignants();
+		enseignant prof = new enseignant (nomP, prenomP, dateP, adresseP, numen, mat);
+		p.ajouteEnseignant(prof);
+	}
+	
+	// ajout classe
+	private static void ajoutClasse() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ajout d'une classe");
+		System.out.println("Saisir les données suivantes: ");
+		System.out.println("Professeur principal de la classe: ");
+		String profP = sc.nextLine();
+		System.out.println("Niveau de la classe: ");
+		int niv = sc.nextInt();
+		System.out.println("Nom de la classe: ");
+		String nomClasse = sc.nextLine();
+		gestionnaireClasses college = new gestionnaireClasses();
+		classe classe6A = new classe(profP, niv, nomClasse);
+		college.ajouteClasse(classe6A);
+		
+	}
+
+	// ajout élève
+	private static void ajoutEleve() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ajout d'un élève");
+		System.out.println("Saisir les données suivantes: ");
+		System.out.println("Nom: ");
+		String nom = sc.nextLine();
+		System.out.println("Prenom: ");
+		String prenom = sc.nextLine();
+		System.out.println("Date de naissance: ");
+		String date = sc.nextLine();
+		System.out.println("Adresse: ");
+		String adresse = sc.nextLine();
+		System.out.println("INE : ");
+		int ine = sc.nextInt();
+		System.out.println("Nombre de demie journées d'absence: ");
+		Float abs = sc.nextFloat();
+		gestionnaireEleves g = new gestionnaireEleves();
+		eleve e6A1 = new eleve (nom, prenom, date, adresse, ine, abs);
+		g.ajouteEleve(e6A1);
+		
+	}
 
 	private static void erreur() {
 		System.out.println("Erreur");
 	}
 
 	private static void AuRevoir() {
-		System.out.println ("Au revoir");
-		
+		System.out.println ("Au revoir");	
 	}
 
+	//====================================================================================================================================================================================
+	//============================================================================ACCES RAPIDE============================================================================================
+	//====================================================================================================================================================================================
 	private static void accesRapide() {
 		int r;
 		System.out.println("|-----Acces Rapide--------|");
@@ -61,7 +201,6 @@ public class Menu {
 		System.out.println("| 0 - Quitter             |");
 		System.out.println("|-------------------------|");
 		System.out.println("Choix :");
-		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		r = scan.nextInt();
 		switch (r){
@@ -75,7 +214,10 @@ public class Menu {
 		}
 		
 	}
-
+	
+	//====================================================================================================================================================================================
+	//================================================================================MOYENNE=============================================================================================
+	//====================================================================================================================================================================================
 	private static void moyenne() {
 		int m;
 		System.out.println("|-----------MOYENNE------------|");
@@ -132,6 +274,10 @@ public class Menu {
 		
 	}
 
+	
+	//====================================================================================================================================================================================
+	//==============================================================================CLASSEMENT============================================================================================
+	//====================================================================================================================================================================================
 	private static void classement() {
 		int b;
 		System.out.println("|---------------Afficher les classements-----------------|");
@@ -185,6 +331,10 @@ public class Menu {
 		}
 	}
 
+	
+	//====================================================================================================================================================================================
+	//==================================================================================BULLETIN==========================================================================================
+	//====================================================================================================================================================================================
 	private static void bulletin() {
 		
 		
@@ -249,8 +399,6 @@ private static void accesClasse() {
 		
 	}
 
-
-@SuppressWarnings("unused")
 public static void accesMat() {
 	System.out.println("Liste des matières :");
 	matiere m = new matiere("maths");
@@ -266,10 +414,10 @@ public static void accesMat() {
 	System.out.println(mat);
 
 	System.out.println("Choisir une matière");
-	@SuppressWarnings("resource")
 	Scanner scan = new Scanner(System.in);
 	String s = scan.nextLine();
 	mat.rechMat(s);
+	
 	
 	int k;
 	System.out.println("|----Liste des matières-----|");
@@ -291,7 +439,9 @@ public static void accesMat() {
 		
 	}
 
-
+	//====================================================================================================================================================================================
+	//=====================================================================AFFICHAGE ET GESTION DES DONNÉES===============================================================================
+	//====================================================================================================================================================================================
 //gestion des eleves
 
 private static void accesEleve() {
@@ -325,18 +475,23 @@ private static void accesEleve() {
 }
 
 private static void recherNiveau() {
+	Scanner sc = new Scanner(System.in);
 	System.out.println("Saisir le niveau");
 	
 }
 
 private static void recherClasse() {
+	Scanner sc = new Scanner(System.in);
 	System.out.println("Saisir la classe");
 	
 }
 
 private static void recherEleve() {
+	Scanner sc = new Scanner(System.in);
 	System.out.println("Saisir l'INE d'un élève");
-	
+	int ine = sc.nextInt();
+	gestionnaireEleves g = new gestionnaireEleves();
+	g.rechEleve(ine);
 }
 
 //gestion des enseignants
@@ -370,12 +525,15 @@ private static void accesEnseignant() {
 
 
 private static void afficherListeEns() {
-	
-	
+	classe.AfficheEnseignant();
 }
 
 private static void recherEns() {
+	Scanner sc = new Scanner(System.in);
 	System.out.println("Saisir le numéro d'un enseignant");
+	int numen = sc.nextInt();
+	gestionnaireEnseignants p = new gestionnaireEnseignants();
+	p.rechEnseignant(numen);
 	
 }
 }
