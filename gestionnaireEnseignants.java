@@ -21,4 +21,16 @@ public class gestionnaireEnseignants {
 	     
 }
 	
+	/**Recherche prof - Enseignant **/
+	public enseignant rechEnseignant(int num){
+		int j=0;
+		enseignant res = null;
+		while (j<ens.size() && res == null){
+			if(ens.get(j).numen==num)
+				res = ens.get(j);
+			j++;
+		}
+		return res;
+	}
+
 }
