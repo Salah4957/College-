@@ -1,9 +1,11 @@
+
+
 import java.util.ArrayList;
 
 
 public class classe {
-	private ArrayList<eleve> eleves = new ArrayList<eleve>();
-	private ArrayList <enseignant> ens = new ArrayList<enseignant>();
+	private static ArrayList<eleve> eleves = new ArrayList<eleve>();
+	private static ArrayList <enseignant> ens = new ArrayList<enseignant>();
 	String profPrincipal;
 	int niveau;
 	String nomClasse;
@@ -22,6 +24,13 @@ public class classe {
 		this.niveau=niveau; 
 		this.nomClasse= nomClasse;
 	}
+	
+	// constructeur 3
+		public classe (String profPrincipal, int niveau, String nomClasse){
+			this.profPrincipal=profPrincipal;
+			this.niveau=niveau; 
+			this.nomClasse= nomClasse;
+		}
 	
 	// ajout élève --> UTILE?
 	public void ajoutEleve(eleve a){
@@ -110,35 +119,7 @@ public class classe {
 		profPrincipal = x;
 		
 	}
-	
-	/**Recherche eleve**/
-	public String rechEleve(int e){
-	String s = "";
-	for (eleve el : eleves){
-		if( el.ine == e ){
-			s += e;
-		}
-	}
-	if (s != null)
-		return s;
-	else
-		return "Aucun résultat trouvé";
-	}
 
-	/**Recherche prof - Enseignant **/
-	public String rechEnseignant(int e){
-	String s = "";
-	for (enseignant prof : ens){
-		if( prof.numen == e){
-			s += e;
-		}
-	}
-	if (s != null)
-		return s;
-	else
-		return "Aucun résultat trouvé";
-	}
-	
 	/** Afficher tous les élèves d'une classe **/
 	public String AffichEleve(){
 		String s = new String();
@@ -149,14 +130,14 @@ public class classe {
 	}
 	
 	/** Afficher tous les enseignants d'une classe **/
-	public String AfficheEnseignant(){
+	public static String AfficheEnseignant(){
 		String s = new String();
 		for(enseignant prof : ens ){
 				s= prof+"\n";
 		}
 		return s;
 	}
-	//supprimé éléve
+	//supprimer éléve
 	public void supEleve(eleve a){
 		eleves.remove(a);
 		
