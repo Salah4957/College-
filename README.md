@@ -9,6 +9,6 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 * 2 - Afficher le bulletin d'un élève : 
 * 3 - Effectuer un classement : Virginie 
 * 4 - Calculer une moyenne : Virginie
-* 5 - Acces rapide :
+* 5 - Acces rapide : Linh
 * 6 - Ajouter des données : normalement c'est fait 
 
