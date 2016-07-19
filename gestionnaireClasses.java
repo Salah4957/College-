@@ -8,6 +8,7 @@ public class gestionnaireClasses {
 			classes = new ArrayList<classe>();
 	}
 	
+	//Ajouter une classe
 	public void ajouteClasse(classe c){
 		classes.add(c);
 	}
@@ -79,4 +80,28 @@ public class gestionnaireClasses {
 		}
 		return Classes; 
 	}
+	
+	// recherche Classe
+		public classe rechClasse(String c){
+			int i=0;
+			classe res = null;
+			while (i<classes.size() && res == null){
+				if(classes.get(i).nomClasse==c)
+					res = classes.get(i);
+				i++;
+			}
+			return res;
+		}
+		
+	// recherche Niveau
+			public ArrayList <classe> rechNiveau(int n){
+				int i=0;
+				ArrayList <classe> res = null;
+				while (i<classes.size() && res == null){
+					if(classes.get(i).niveau==n)
+						res.add(classes.get(i));
+					i++;
+				}
+				return res;
+			}
 }
