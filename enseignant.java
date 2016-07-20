@@ -8,6 +8,15 @@ public class enseignant extends personne{
 		this.matiere=matiere; 
 		}
 	
+	public enseignant(String nomP, String prenomP, String dateP, String adresseP, int numen, matiere mat) {
+		super(nom,prenom);
+		this.dateNaissance=dateP;
+		this.adresse=adresseP;
+		this.numen=numen;
+		this.matiere=mat;
+				
+	}
+	
 	//getter
 	public int getNumen(){
 		return this.numen;
