@@ -92,8 +92,8 @@ A chaque ouverture du programme (menu.java), les données sont chargées en base
 1.	Le système demande quel classement l’utilisateur souhaite effectuer.
 2.	L’utilisateur effectue son choix.
 
-*Choix 1 : Classement d’une classe dans une matière
-*Choix 2 : Classement d’une classe dans un niveau et dans une matière
+* Choix 1 : Classement d’une classe dans une matière
+* Choix 2 : Classement d’une classe dans un niveau et dans une matière
 
 ###Classement des élèves d’une classe dans une matière
 1.	Le système demande de saisir le nom de la classe dont le classement doit être effectué.
