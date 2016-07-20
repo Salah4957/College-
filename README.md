@@ -6,9 +6,9 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 
 ## ce qu'il reste à faire (menu) -> Je vous propose que chacun prenne une partie pour aller plus vite, si ça vous convient 
 * 1 - Affichage et gestion des données :
-* 2 - Afficher le bulletin d'un élève : 
-* 3 - Effectuer un classement : Virginie 
-* 4 - Calculer une moyenne : Virginie
+* 2 - Afficher le bulletin d'un élève : fait
+* 3 - Effectuer un classement : fait
+* 4 - Calculer une moyenne : fait
 * 5 - Acces rapide : Linh
 * 6 - Ajouter des données : normalement c'est fait 
 
