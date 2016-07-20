@@ -8,7 +8,7 @@ public class enseignant extends personne{
 		this.matiere=matiere; 
 		}
 	
-	public enseignant(String nomP, String prenomP, String dateP, String adresseP, int numen, matiere mat) {
+	public enseignant(String nom, String prenom, String dateNaissance, String adresse, int numen, matiere mat) {
 		super(nom, prenom, adresse, dateNaissance);
 		this.numen=numen;
 		this.matiere=matiere;
