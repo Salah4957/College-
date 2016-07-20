@@ -28,7 +28,7 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO eleve " +
-						 "VALUES ('"+this.nom+"', '"+this.prenom+"', '"+this.dateNaissance+"', '"+this.adresse+"', '"+this.ine+"', '"+this.absence+"', '"+this.nomClasse+"')";
+						 "VALUES ('"+nom+"', '"+ '"+dateNaissance+"',adresse+"', '"+ '"+absence+"',nomClasse+"')";
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
@@ -79,7 +79,7 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO enseignant " +
-						 "VALUES ('"+this.nom+"', '"+this.prenom+"', '"+this.dateNaissance+"', '"+this.adresse+"', '"+this.numen+"', '"+this.matiere+"', '"+this.nomClasse+"')";
+						 "VALUES ('"+nom+"', '"+prenom+"', '"+dateNaissance+"', '"+adresse+"', '"+numen+"', '"+matiere+"', '"+nomClasse+"')";
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
@@ -130,7 +130,7 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO note " +
-						 "VALUES ('"+this.matiere+"', '"+this.ine+"', '"+this.note+"', '"+this.nomClasse+"')";
+						 "VALUES ('"+matiere+"', '"+ine+"', '"+note+"', '"+nomClasse+"')";
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
@@ -181,7 +181,7 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO classe " +
-						 "VALUES ('"+this.nomClasse+"', '"+this.numen+"')";
+						 "VALUES ('"+nomClasse+"', '"+numen+"')";
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
