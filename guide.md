@@ -50,8 +50,8 @@ A chaque ouverture du programme (menu.java), les données sont chargées en base
 ##Moyenne dans une matière
 1.	Le système demande quelle moyenne l’utilisateur souhaite calculer.
 2.	L’utilisateur effectue son choix.
-*Choix 1 : Moyenne d’une classe dans une matière
-*Choix 2 : Moyenne d’une classe dans un niveau et dans une matière
+* Choix 1 : Moyenne d’une classe dans une matière
+* Choix 2 : Moyenne d’une classe dans un niveau et dans une matière
 
 ###Moyenne d’une classe dans une matière
 1.	Le système demande de saisir le nom de la classe dont la moyenne doit être calculée.
@@ -70,9 +70,10 @@ A chaque ouverture du programme (menu.java), les données sont chargées en base
 #Classement (choix 4)
 1.	Le système demande quel classement l’utilisateur souhaite effectuer.
 2.	L’utilisateur effectue son choix.
-*Choix 1 : Classement d’une classe
-*Choix 2 : Classement d’une classe dans un niveau
-*Choix 3 : Classement dans une matière
+
+* Choix 1 : Classement d’une classe
+* Choix 2 : Classement d’une classe dans un niveau
+* Choix 3 : Classement dans une matière
 
 ##Classement des élèves dans une classe
 1.	Le système demande de saisir le nom de la classe dont le classement doit être effectué.
