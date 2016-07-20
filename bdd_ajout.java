@@ -1,7 +1,7 @@
 //Etape 1: Import des packages requis
 import java.sql.*;
 
-public class bdd {
+public class bdd_ajout {
 	//JDBC diver nom et database URL
 	static final String JDBC_DRIVER ="com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost/college";
