@@ -117,4 +117,3 @@ A chaque ouverture du programme (menu.java), les données sont chargées en base
 1.	Choix 0 dans le menu principal
 
 Note : il faudrait pouvoir revenir au menu précédent (pas au menu principal)
-nts here
