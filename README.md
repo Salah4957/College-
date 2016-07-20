@@ -11,4 +11,7 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 * 4 - Calculer une moyenne : Virginie
 * 5 - Acces rapide : Linh
 * 6 - Ajouter des données : normalement c'est fait 
+* 
+
+Guide utilisateur initialisé : guide.md
 
