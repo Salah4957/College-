@@ -203,10 +203,12 @@ public class menu {
 	
 	private static void accesRapide() {
 		int r;
-		System.out.println("|-----Acces Rapide--------|");
-		System.out.println("| 1 - Signaler une absence|");
-		System.out.println("| 0 - Quitter             |");
-		System.out.println("|-------------------------|");
+		System.out.println("|=====ACCES RAPIDE=================|");
+		System.out.println("| 1 - Signaler une absence         |");
+		System.out.println("| 2 - Ajouter une nouvelle élève   |");
+		System.out.println("| 3 - Ajouter un nouveau enseignant|");
+		System.out.println("| 0 - Quitter                      |");
+		System.out.println("+----------------------------------+");
 		System.out.println("Choix :");
 		
 		r = scan.nextInt();
@@ -214,8 +216,11 @@ public class menu {
 		switch (r){
 		case 1:
 			break;
-		case 0:
-			AuRevoir();
+		case 2:
+			break;
+		case 3:ajoutEnseignant();
+			break;
+		case 0:AuRevoir();
 			break;
 		default: 
 			erreur();
