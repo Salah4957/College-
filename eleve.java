@@ -17,19 +17,15 @@ public class eleve extends personne{
 		this.absence=absence;
 	}
 	
-	//getter
-	public int getIne(){
-		return this.ine;
-	}
 	
 	// Afficher
 	public String toString(){
 		String s= super.nom+", "+super.prenom+", "+super.dateNaissance+", "+super.adresse+", "+ine; 
 		if (absence==0){
-			s += ", aucune absence \n";
+			s += ", aucune absence.";
 			}
 		else {
-			s += ", " +absence+ " journées d'absence \n";
+			s += ", " +absence+ " journées d'absence.";
 				}
 		return s;
 	}
@@ -58,4 +54,24 @@ public class eleve extends personne{
 		}
 	
 
+	// getter
+		public String getNomEleve(){
+			return this.nom;
+		}
+		
+		public String getPrenomEleve(){
+			return this.nom;
+		}
+		
+		public String getAdEleve(){
+			return this.adresse;
+		}
+		
+		public String getDateNaissanceEleve(){
+			return this.dateNaissance;
+		}
+		
+		public float getAbs(){
+			return this.absence;
+		}
 }
