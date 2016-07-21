@@ -271,25 +271,31 @@ public class menu {
 	}
 
 	
-
 	private static void moyNiv() {
-		System.out.println("Moyenne d'un niveau");
-		System.out.println("Niveau : ");
-		
-		String niveau = scan.nextLine();
-		
-	}
+			System.out.println("Moyenne d'un niveau");
+			System.out.println("Niveau : ");
+			int niveau = scan.nextInt();
+			scan.nextLine();
+			gestionnaireClasses c = new gestionnaireClasses();
+			ArrayList <classe> cla = c.rechNiveau(niveau);
+			if (cla.size()==0)
+				System.out.println("Le niveau n'existe pas");
+			else
+				System.out.println(c.moyenneNiveau(niveau));
+		}
+	
 
 	private static void moyClasse() {
 		System.out.println("Moyenne d'une classe");
 		System.out.println("Classe : ");
-		
 		String classe = scan.nextLine();
-		classe cla = new classe();
-		System.out.println(cla.moyenneClasse());
-		
-		
-	}
+		gestionnaireClasses c = new gestionnaireClasses();
+		classe cla = c.rechClasse(classe);
+		if (cla==null)
+			System.out.println("La classe n'existe pas");
+		else
+			System.out.println(cla.moyenneClasse());	
+	}	
 
 	private static void moyMat() {
 		int n;
@@ -320,15 +326,48 @@ public class menu {
 	}
 
 	
-	private static void moyNivMat() {
-		// TODO Auto-generated method stub
+private static void moyNivMat() {
+		System.out.println("Moyenne d'une classe");
+		System.out.println("Niveau : ");
+		int niveau = scan.nextInt();
+		scan.nextLine();
+		System.out.println("Matière : ");
+		String matiere = scan.nextLine();
+		gestionnaireClasses c = new gestionnaireClasses();
+		ArrayList <classe> cla = c.rechNiveau(niveau);
+		gestionnaireMatieres m = new gestionnaireMatieres();
+		matiere mat = m.rechMat(matiere);
+		if (cla==null)
+			System.out.println("Le niveau n'existe pas");
+		else {
+			if (cla.size()==0)
+				System.out.println("La matière n'existe pas");
+			else
+				System.out.println(c.moyenneNiveauMat(niveau, mat));
+		}
 		
 	}
 
 	private static void moyClasseMat() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Moyenne d'une classe");
+		System.out.println("Classe : ");
+		String classe = scan.nextLine();
+		System.out.println("Matière : ");
+		String matiere = scan.nextLine();
+		gestionnaireClasses c = new gestionnaireClasses();
+		classe cla = c.rechClasse(classe);
+		gestionnaireMatieres m = new gestionnaireMatieres();
+		matiere mat = m.rechMat(matiere);
+		if (cla==null)
+			System.out.println("La classe n'existe pas");
+		else {
+			if (mat==null)
+				System.out.println("La matière n'existe pas");
+			else
+				System.out.println(cla.moyenneClasseMat(mat));
+		}
 	}
+		
 
 	//====================================================================================================================================================================================
 	//==============================================================================CLASSEMENT============================================================================================
@@ -366,20 +405,29 @@ public class menu {
 		}
 	}
 
-	private static void claClasseNiv() {
+private static void claClasseNiv() {
 		System.out.println("Classement des classes dans un niveau" );
 		System.out.println("Niveau : " );
-		
+		int niveau = scan.nextInt();
+		scan.nextLine();
+		gestionnaireClasses c = new gestionnaireClasses();
+		ArrayList<classe> cla = c.rechNiveau(niveau);
+		if (cla.size()==0)
+			System.out.println("La matière n'existe pas");
+		else
+			System.out.println(c.classementNiveau(niveau));
 	}
 
 	private static void claClasse() {
 		System.out.println("Classement des élèves dans une classe" );
 		System.out.println("Classe : " );
-		
 		String classe = scan.nextLine();
-		classe cla = new classe();
-		System.out.println(cla.classementClasse());
-		
+		gestionnaireClasses c = new gestionnaireClasses();
+		classe cla = c.rechClasse(classe);
+		if (cla==null)
+			System.out.println("La classe n'existe pas");
+		else
+			System.out.println(cla.classementClasse());
 	}
 
 	private static void claMatiere() {
@@ -414,10 +462,22 @@ public class menu {
 	private static void classementMatClasseNiv() {
 		System.out.println("Classement des classes par matière dans un niveau " );
 		System.out.println("Niveau : " );
-		// arraylist
-		// taille différent de 0
+		int niv = scan.nextInt();
+		scan.nextLine();
 		System.out.println("Matière : " );
-		
+		String mat = scan.nextLine();
+		gestionnaireClasses c = new gestionnaireClasses();
+		ArrayList <classe> cla = c.rechNiveau(niv);
+		gestionnaireMatieres m = new gestionnaireMatieres();
+		matiere ma = m.rechMat(mat);
+		if (cla.size()==0)
+			System.out.println("Le niveau n'existe pas");
+		else{
+			if (mat==null)
+				System.out.println("La matière n'existe pas");
+			else
+				System.out.println(c.classementNivMat(ma, niv));
+		}
 	}
 
 	private static void classementMatClasse() {
@@ -439,19 +499,39 @@ public class menu {
 			else
 				System.out.println(cla.classementClasseMat(ma));
 		}
-			
-		
-		
-	}
 
 	//====================================================================================================================================================================================
 	//==================================================================================BULLETIN==========================================================================================
 	//====================================================================================================================================================================================
 	// afficher le bulletin d'un élève
 	private static void bulletin() {
-		System.out.println("Bulletin " );
-		System.out.println("Elève (INE): " );
-		
+		System.out.println("Saisir l'INE l'élève : " );
+		int ine = scan.nextInt();
+		scan.nextLine();
+		gestionnaireEleves g = new gestionnaireEleves();
+		eleve e = g.rechEleve(ine);
+		gestionnaireClasses c = new gestionnaireClasses();
+		classe cla = c.rechClasseEleve(ine);
+		gestionnaireMatieres m = new gestionnaireMatieres();
+		// comment récupérer les matières : passer par l'arraylist enseignant dans classe?
+		if (e==null)
+			System.out.println("L'élève n'existe pas");
+		else
+			System.out.println("Bulletin \n" );
+			System.out.println(e.getNomEleve());
+			System.out.println(e.getPrenomEleve());
+			System.out.println(e.getDateNaissanceEleve());
+			System.out.println(e.getAdEleve());
+			if (cla==null)
+				System.out.println("Pas de classe");
+			else
+			System.out.println("Classe : " +cla.getNomClasse() );
+			System.out.println("Prof principal: " + cla.getProfPrincipal());
+			System.out.println("Nombre d'absence: "+e.getAbs()+ "demie(s)journée(s)" );
+			for (enseignant p : cla.getEns()){
+				System.out.println( p.matiere+ " : " +e.moyenneMat(p.matiere));
+			}
+			System.out.println("Moyenne générale : " + e.moyenne() );
 	}
 
 	//====================================================================================================================================================================================
