@@ -21,36 +21,4 @@ public abstract class personne {
 	public String toString(){
 		return nom+", "+prenom+", "+dateNaissance+", "+adresse;
 	}
-	
-	/**modifier personne ****/
-	//ajouter des getters et des setters
-	//getters pour l'affichage
-	public String getNom(){
-		return this.nom;
-	}
-	public String getPrenom(){
-		return this.prenom;
-	}
-	public String getAdresse(){
-		return this.adresse;
-	
-	}
-	public String getDateNaissance(){
-		return this.dateNaissance;
-	}
-	//setters pour changer la valeur
-	public void setNom(String x){
-		nom = x;
-		
-	}
-	public void setPrenom(String x){
-		prenom = x;
-	}
-	
-	public void setAdresse(String x){
-		adresse = x;
-	}
-	public void setDateNaissance(String x){
-		dateNaissance = x;
-	}
 }
