@@ -28,7 +28,7 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO eleve " +
-						 "VALUES ('"+nom+"', '"+ '"+dateNaissance+"',adresse+"', '"+ '"+absence+"',nomClasse+"')";
+						 "VALUES ('"+nom+"', '"+dateNaissance+"', "+adresse+"', '"+absence+"', "+nomClasse+"')";
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
@@ -213,3 +213,4 @@ public class bdd_ajout {
 		}
 		System.out.println("Fin connexion BDD...");
 	}
+}
