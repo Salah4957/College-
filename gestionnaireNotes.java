@@ -37,4 +37,3 @@ public class gestionnaireNotes {
 			notes.add(n);
 		}
 }
-
