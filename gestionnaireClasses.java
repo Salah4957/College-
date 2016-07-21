@@ -104,4 +104,16 @@ public class gestionnaireClasses {
 				}
 				return res;
 			}
+			
+	// recherche Classe d'un élève
+			public classe rechClasseEleve(int n){
+				int i=0;
+				classe res = null;
+				while (i<classes.size() && res == null){
+					if(classes.get(i).rechEleve(n)==true)
+						res = classes.get(i);
+					i++;
+				}
+				return res;
+			}
 }
