@@ -83,7 +83,6 @@ public class menu {
 				accesClasse();
 				break;
 			case 0:
-				AuRevoir();
 				break;
 			default:
 				erreur();
@@ -116,7 +115,6 @@ public class menu {
 			affElevesNiveau();
 			break;
 		case 0:
-			AuRevoir();
 			break;
 		default:
 			erreur();
@@ -182,7 +180,6 @@ public class menu {
 			afficherListeEns();
 			break;
 		case 0:
-			AuRevoir();
 			break;
 		default:
 			erreur();
@@ -207,12 +204,12 @@ public class menu {
 		private static void afficherListeEns() {
 			System.out.println("Liste des enseignants : ");
 			gestionnaireEnseignants p = new gestionnaireEnseignants(); 
-			ArrayList <enseignant> profs = new ArrayList<enseignant>();
+			ArrayList <enseignant> profs = p.ens;
 			if (profs.size()==0)
 				System.out.println("Aucun enseignant dans la liste");
 			else
 				for (int i=0; i<profs.size(); i++)
-					System.out.println(p.toString());
+					System.out.println(profs.get(i).toString());
 		}
 
 	// accès aux classes
@@ -235,7 +232,6 @@ public class menu {
 			modifClasse();
 			break;
 		case 0:
-			AuRevoir();
 			break;
 		default:
 			erreur();
@@ -299,7 +295,6 @@ public class menu {
 			modifMat();
 			break;
 		case 0:
-			AuRevoir();
 			break;
 		default:
 			erreur();
@@ -322,7 +317,7 @@ public class menu {
 		
 		// modif liste matières
 		private static void modifMat() {
-			System.out.println("Liste des matières :");
+			System.out.println("Matière à modifier :");
 			String ma = scan.nextLine();
 			gestionnaireMatieres mat = new gestionnaireMatieres();
 			matiere m = mat.rechMat(ma);
@@ -333,6 +328,7 @@ public class menu {
 				String newMat = scan.nextLine();
 				m.setNomMatiere(newMat);
 		}
+		
 
 	//====================================================================================================================================================================================
 	//==================================================================================BULLETIN==========================================================================================
@@ -395,7 +391,6 @@ public class menu {
 			claMatiere();
 			break;
 		case 0:
-			AuRevoir();
 			break;
 		default: 
 			erreur();
@@ -450,7 +445,6 @@ public class menu {
 				classementMatClasseNiv();
 				break;
 			case 0:
-				AuRevoir();
 				break;
 			default: 
 				erreur();
@@ -531,7 +525,6 @@ public class menu {
 			moyMat();
 			break;
 		case 0:
-			AuRevoir();
 			break;
 		default: 
 			erreur();
@@ -587,7 +580,6 @@ public class menu {
 				moyNivMat();
 				break;
 			case 0:
-				AuRevoir();
 				break;
 			default: 
 				erreur();
@@ -645,11 +637,11 @@ public class menu {
 	
 	private static void accesRapide() {
 		int r;
-		r=19;
+		r=1;
 		while (r!=0){
 		System.out.println("|=====ACCES RAPIDE=================|");
 		System.out.println("| 1 - Signaler une absence         |");
-		System.out.println("| 2 - Ajouter une nouvelle élève   |");
+		System.out.println("| 2 - Ajouter une nouvel élève     |");
 		System.out.println("| 3 - Ajouter un nouveau enseignant|");
 		System.out.println("| 0 - Quitter                      |");
 		System.out.println("+----------------------------------+");
@@ -664,7 +656,7 @@ public class menu {
 			break;
 		case 3:ajoutEnseignant();
 			break;
-		case 0:AuRevoir();
+		case 0:
 			break;
 		default: 
 			erreur();
@@ -692,7 +684,6 @@ public class menu {
 		System.out.println("|--------------------------------|");
 		System.out.println("Choix :");		
 		j = scan.nextInt();
-		scan.nextLine();
 		scan.nextLine(); // à mettre après chqque nexInt à cause du buffer
 		switch (j){
 		case 1:
@@ -711,7 +702,6 @@ public class menu {
 			ajoutNote();
 			break;
 		case 0:
-			AuRevoir();
 			break;
 		default: 
 			erreur();
@@ -731,12 +721,7 @@ public class menu {
 			eleve e = el.rechEleve(ine);
 			if (e == null){
 				System.out.println("L'élève n'est pas connu.");
-				System.out.println("Nom de l'élève: ");
-				String nomE = scan.nextLine();
-				System.out.println("Prénom de l'élève: ");
-				String prenomE = scan.nextLine();
-				e = new eleve(nomE, prenomE, ine);
-				el.ajouteEleve(e);		
+				ajoutEleve();
 			}
 			System.out.println("Saisir la matière: ");
 			String nomMat = scan.nextLine();
@@ -831,3 +816,4 @@ public class menu {
 		private static void AuRevoir() {
 			System.out.println ("Au revoir");	
 		}	
+}
