@@ -241,7 +241,7 @@ public class menu {
 	private static void moyenne() {
 		int m;
 		m = 19;
-		while (m!0){
+		while (m!=0){
 		System.out.println("|-----------MOYENNE------------|");
 		System.out.println("| 1 - Moyenne d'une classe     |");
 		System.out.println("| 2 - Moyenne d'un niveau      |");
@@ -499,6 +499,7 @@ private static void claClasseNiv() {
 			else
 				System.out.println(cla.classementClasseMat(ma));
 		}
+	}	
 
 	//====================================================================================================================================================================================
 	//==================================================================================BULLETIN==========================================================================================
