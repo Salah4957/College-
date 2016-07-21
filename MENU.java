@@ -58,6 +58,8 @@ public class menu {
 	
 	private static void ajout() {
 		int j;
+		j=10;
+		while (j!=0){
 		System.out.println("|-----Ajouter des données--------|");
 		System.out.println("| 1 - Données élèves 			 |");
 		System.out.println("| 2 - Données enseignants        |");
@@ -91,6 +93,7 @@ public class menu {
 			break;
 		default: 
 			erreur();
+		}
 		}
 		
 	}
@@ -203,6 +206,8 @@ public class menu {
 	
 	private static void accesRapide() {
 		int r;
+		r=19;
+		while (r!=0){
 		System.out.println("|=====ACCES RAPIDE=================|");
 		System.out.println("| 1 - Signaler une absence         |");
 		System.out.println("| 2 - Ajouter une nouvelle élève   |");
@@ -225,7 +230,7 @@ public class menu {
 		default: 
 			erreur();
 		}
-		
+		}
 		
 	}
 	
@@ -235,6 +240,8 @@ public class menu {
 	// calculer la moyenne des élèves d'une classe, d'une classe d'un niveau, des élèves d'une classe dans une matière, d'une classe dans une matière dans un niveau
 	private static void moyenne() {
 		int m;
+		m = 19;
+		while (m!0){
 		System.out.println("|-----------MOYENNE------------|");
 		System.out.println("| 1 - Moyenne d'une classe     |");
 		System.out.println("| 2 - Moyenne d'un niveau      |");
@@ -260,7 +267,7 @@ public class menu {
 		default: 
 			erreur();
 		}
-		
+		}
 	}
 
 	
@@ -286,6 +293,8 @@ public class menu {
 
 	private static void moyMat() {
 		int n;
+		n = 5783762;
+		while (n!=0){
 		System.out.println("|---------Moyenne dans une matière----------|");
 		System.out.println("| 1 - Moyenne d'une classe dans une matière |");
 		System.out.println("| 2 - Moyenne d'un niveau dans une matière  |");
@@ -307,7 +316,7 @@ public class menu {
 		default: 
 			erreur();
 		}
-		
+		}
 	}
 
 	
@@ -327,6 +336,8 @@ public class menu {
 	// classement des élèves d'une classe, d'une classe dans un niveau, des élèves d'une classe dans une matière, d'une classe dans un niveau et dans une matière
 	private static void classement() {
 		int b;
+		b=1728;
+		while (b!=0){
 		System.out.println("|---------------Afficher les classements-----------------|");
 		System.out.println("| 1 - Afficher le classement dans une classe             |");
 		System.out.println("| 2 - Afficher le classement d'une classe dans un niveau |");
@@ -352,7 +363,7 @@ public class menu {
 		default: 
 			erreur();
 		}
-		
+		}
 	}
 
 	private static void claClasseNiv() {
@@ -373,6 +384,8 @@ public class menu {
 
 	private static void claMatiere() {
 		int c;
+		c= 168902;
+		while (c!=0){
 		System.out.println("|--------------------Classement du matière--------------------------|");
 		System.out.println("| 1 - Afficher le classement par matière dans une classe            |");
 		System.out.println("| 2 - Afficher le classement par matière d'une classe dans un niveau|");
@@ -394,7 +407,7 @@ public class menu {
 		default: 
 			erreur();
 		}
-		
+		}
 	}
 
 	
@@ -448,6 +461,8 @@ public class menu {
 	
 	private static void lister() {
 		int a;
+		a = 890;
+		while (a!=0){
 		System.out.println("|-Affichage et gestion des données-|");
 		System.out.println("|1 - Accès aux élèves              |");
 		System.out.println("|2 - Accès aux enseignants         |");
@@ -477,13 +492,15 @@ public class menu {
 		default:
 			erreur();
 		}
-		
+		}
 	}
 
 
 
 private static void accesClasse() {
 	int y;
+	y =2783;
+	while (y!=0){
 	System.out.println("|---Accès aux classes----|");
 	System.out.println("|1 - Afficher une classe |");
 	System.out.println("|2 - Modifier une classe |");
@@ -505,7 +522,7 @@ private static void accesClasse() {
 	default:
 		erreur();
 	}	
-	
+	}
 	}
 
 private static void modifClasse() {
@@ -531,6 +548,8 @@ public static void accesMat() {
 	
 	
 	int k;
+	k = 41191;
+	while (k!=0){
 	System.out.println("|----Liste des matières-----|");
 	System.out.println("| 1 - Modifier              |");
 	System.out.println("| 0 - Quitter               |");
@@ -550,6 +569,7 @@ public static void accesMat() {
 	}	
 	scan1.close();
 	}
+}
 
 	//====================================================================================================================================================================================
 	//=====================================================================AFFICHAGE ET GESTION DES DONNÉES===============================================================================
@@ -558,6 +578,8 @@ public static void accesMat() {
 
 private static void accesEleve() {
 	int m;
+	m = 18;
+	while (m!=0){
 	System.out.println("|----------Accès aux élèves-----------|");
 	System.out.println("|1 - Afficher un élève                |");
 	System.out.println("|2 - Afficher les élèves d'une classe |");
@@ -583,7 +605,7 @@ private static void accesEleve() {
 	default:
 		erreur();
 	}	
-	
+	}
 }
 
 private static void affElevesNiveau() {
@@ -631,6 +653,8 @@ private static void affEleve() {
 
 private static void accesEnseignant() {
 	int n;
+	n = 819;
+	while (n!=0){
 	System.out.println("|-------Accès aux enseignants----------|");
 	System.out.println("|1 - Afficher un enseignant            |");
 	System.out.println("|2 - Afficher la liste des enseignants |");
@@ -651,6 +675,7 @@ private static void accesEnseignant() {
 	default:
 		erreur();
 	}	
+}
 }
 
 private static void afficherListeEns() {
