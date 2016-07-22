@@ -74,4 +74,10 @@ public class eleve extends personne{
 		public float getAbs(){
 			return this.absence;
 		}
+		
+		// setter
+		
+		public void setAbs(float x) {
+			absence = x;
+		}
 }
