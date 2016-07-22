@@ -1,3 +1,5 @@
+package college;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -99,6 +101,7 @@ public class menu {
 		System.out.println("|1 - Afficher un élève                |");
 		System.out.println("|2 - Afficher les élèves d'une classe |");
 		System.out.println("|3 - Afficher les élèves d'un niveau  |");
+		System.out.println("|4 - Modifier les données d'un élève  |");
 		System.out.println("|0 - Quitter                          |");
 		System.out.println("|-------------------------------------|");
 		System.out.println("Choix :");
@@ -114,6 +117,9 @@ public class menu {
 		case 3:
 			affElevesNiveau();
 			break;
+		case 4:
+			modifEleve();
+			break;
 		case 0:
 			break;
 		default:
@@ -122,6 +128,26 @@ public class menu {
 		}
 	}
 	
+		// modifier les données d'un élève 
+		// le nom, le prénom, l'ine et la date de naissance ne sont pas modifiables
+		private static void modifEleve() {
+			System.out.println("Saisir l'INE d'un élève");
+			int ine = scan.nextInt();
+			scan.nextLine();
+			gestionnaireEleves g = new gestionnaireEleves();
+			eleve e = g.rechEleve(ine);
+			if (e==null)
+				System.out.println("L'élève n'existe pas");
+			else
+				System.out.println(g.toString());	
+				System.out.println("Nouvelle adresse :"); 
+				String newAd = scan.nextLine();
+				e.setAd(newAd);
+				System.out.println("Mise à jour des absences :");
+				float newAbs = scan.nextFloat();
+				e.setAbs(newAbs);
+		}
+
 		// afficher un élève
 		private static void affEleve() {
 			System.out.println("Saisir l'INE d'un élève");
@@ -165,11 +191,12 @@ public class menu {
 		int n;
 		n = 819;
 		while (n!=0){
-		System.out.println("|-------Accès aux enseignants----------|");
-		System.out.println("|1 - Afficher un enseignant            |");
-		System.out.println("|2 - Afficher la liste des enseignants |");
-		System.out.println("|0 - Quitter                           |");
-		System.out.println("|--------------------------------------|");
+		System.out.println("|---------Accès aux enseignants-----------|");
+		System.out.println("|1 - Afficher un enseignant               |");
+		System.out.println("|2 - Afficher la liste des enseignants    |");
+		System.out.println("|3 - Modifier les données d'un enseignant |");
+		System.out.println("|0 - Quitter                              |");
+		System.out.println("|-----------------------------------------|");
 		System.out.println("Choix :");
 		n = scan.nextInt();
 		switch (n){
@@ -179,6 +206,9 @@ public class menu {
 		case 2:
 			afficherListeEns();
 			break;
+		case 3:
+			modifEns();
+			break;	
 		case 0:
 			break;
 		default:
@@ -210,6 +240,31 @@ public class menu {
 			else
 				for (int i=0; i<profs.size(); i++)
 					System.out.println(profs.get(i).toString());
+		}
+		
+		// modifier les données d'un prof 
+		private static void modifEns() {
+			System.out.println("Saisir le numéro d'un enseignant");
+			int numen = scan.nextInt();
+			scan.nextLine();
+			gestionnaireEnseignants p = new gestionnaireEnseignants();
+			enseignant ens = p.rechEnseignant(numen);
+			if (ens==null)
+				System.out.println("L'enseignant n'existe pas");
+			else
+				System.out.println(p.toString());	
+				System.out.println("Nouvelle adresse :"); 
+				String newAd = scan.nextLine();
+				ens.setAd(newAd);
+				System.out.println("Nouvelle matière: ");
+				String newMat = scan.nextLine();
+				gestionnaireMatieres m = new gestionnaireMatieres();
+				matiere mat = m.rechMat(newMat);
+				if (mat == null){
+					mat = new matiere(newMat);
+					m.ajouteMatiere(mat);		
+				}
+				ens.setMatiere(mat);
 		}
 
 	// accès aux classes
@@ -652,7 +707,7 @@ public class menu {
 		switch (r){
 		case 1:
 			break;
-		case 2:ajoutEleve();
+		case 2:
 			break;
 		case 3:ajoutEnseignant();
 			break;
