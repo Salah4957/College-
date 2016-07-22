@@ -37,28 +37,3 @@
 			return res;
 		}
 }
-		
-		/**Recherche eleve**/
-		public eleve rechEleve(int i){
-			int j=0;
-			eleve res = null;
-			while (j<eleves.size() && res == null){
-				if(eleves.get(j).ine==i)
-					res = eleves.get(j);
-				j++;
-			}
-			return res;
-		}
-}	
-		/**Recherche eleve**/
-		public eleve rechEleve(int i){
-			int j=0;
-			eleve res = null;
-			while (j<eleves.size() && res == null){
-				if(eleves.get(j).ine==i)
-					res = eleves.get(j);
-				j++;
-			}
-			return res;
-		}
-}
