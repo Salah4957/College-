@@ -27,6 +27,7 @@ public class enseignant extends personne{
 	//getters
 	public matiere getMatiere(){
 		return this.matiere;
+		
 	}
 	//setters
 	public void setMatiere(matiere x){ 
