@@ -7,7 +7,6 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 ## ce qu'il reste à faire : 
 * voir si la connexion à la BDD fonctionne
 * tester les fonctions
-* finir guide.md
 
-J'ai modifié le diagramme des classes (Virginie) : à vérifier
+J'ai modifié le diagramme des classes et compléter guide.md (Virginie) : à vérifier
 
