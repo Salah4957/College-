@@ -27,7 +27,7 @@ public class bdd_lecture {
 		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
-		      sql = "(SELECT  ine, nom, prenom, dateNaissance, adresse, absence FROM eleve WHERE ine='"+ID+"')";
+		      sql = "(SELECT  ine, nom, prenom, dateNaissance, adresse, absence, nomClasse FROM eleve WHERE ine='"+ID+"')";
 		      ResultSet rs = stmt.executeQuery(sql);
 		      
 		    //Etape 5: Extraction data du ResultSet
@@ -39,6 +39,7 @@ public class bdd_lecture {
 		    	  String adresse = rs.getString("adresse");
 		    	  int ine = rs.getInt("ine");
 		    	  float absence = rs.getFloat("absence");
+		    	  String nomClasse = rs.getString("nomClasse");
 		    	  
 		    	  //affichage des valeurs de la BDD
 				  System.out.print("INE: "+ine);
@@ -46,7 +47,8 @@ public class bdd_lecture {
 		    	  System.out.print(", Prenom:"+prenom);
 		    	  System.out.print(", Date de Naissance: "+dateNaissance);
 		    	  System.out.print(", adresse: "+adresse);
-		    	  System.out.println(", Absence: "+absence);
+		    	  System.out.print(", Absence: "+absence);
+		    	  System.out.println(", Classe: "+nomClasse);
 		      }
 		      
 		    //Etape 6: Nettoyage de l'environnement
