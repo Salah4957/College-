@@ -1,4 +1,3 @@
-
 public abstract class personne {
 	public String nom;
 	public String prenom;
@@ -20,5 +19,9 @@ public abstract class personne {
 	
 	public String toString(){
 		return nom+", "+prenom+", "+dateNaissance+", "+adresse;
+	}
+	
+	public void setAd(String a) {
+		adresse = a;
 	}
 }
