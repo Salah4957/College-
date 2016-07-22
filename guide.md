@@ -20,8 +20,7 @@ A chaque ouverture du programme (menu.java), les données sont chargées en base
 *	Choix 2 : Afficher le bulletin d’un élève
 *	Choix 3 : Calculer des moyennes
 * Choix 4 : Effectuer des classements
-*	Choix 5 : Signaler des absences
-*	Choix 6 : Saisir des données
+*	Choix 5 : Saisir des données
 *	Choix 0 : Quitter
 
 # Affichage de données (choix 1)
@@ -109,11 +108,12 @@ A chaque ouverture du programme (menu.java), les données sont chargées en base
 4.	L’utilisateur saisit la matière.
 5.	Le système affiche le classement des classes dans le niveau et dans la matière saisis.
 
-#Signalement d’absence (choix 5)
-
-#Saisie de données (choix 6)
+#Saisie de données (choix 4)
+1. Le système demande quelles données l'utilisateur souhaite ajouter.
+2. L'utilisateur saisit son choix.
+3. Il accède la fonction d'ajout des données.
+4. Il saisit les données à ajouter.
 
 #Quitter le programme 
 1.	Choix 0 dans le menu principal
 
-Note : il faudrait pouvoir revenir au menu précédent (pas au menu principal)
