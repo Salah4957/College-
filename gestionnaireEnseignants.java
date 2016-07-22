@@ -1,36 +1,39 @@
 import java.util.ArrayList;
 
-public class gestionnaireEnseignants {
-	static ArrayList <enseignant> ens = null;
+public class gestionnaireEleves {
+	static ArrayList <eleve> eleves = null;
 	
-	public gestionnaireEnseignants(){
-		if(ens==null)
-			ens = new ArrayList<enseignant>();
+	public gestionnaireEleves(){
+		if(eleves==null)
+			eleves = new ArrayList<eleve>();
 	}
 	
-	public void ajouteEnseignant(enseignant p){
-		ens.add(p);
+	/*public ArrayList<eleve> getGestionnaire(){			
+		return eleves;
+	}*/
+	
+	public void ajouteEleve(eleve el){
+		eleves.add(el);
 	}
 	
 	public String toString(){
 		String s= ""; 
-		for(enseignant p : ens){
-			s+=p.toString();
+		for(eleve el : eleves){
+			s+=el.toString();
 		}
 	    return s;
 	     
 }
 	
-	/**Recherche prof - Enseignant **/
-	public enseignant rechEnseignant(int num){
+	/**Recherche eleve**/
+	public eleve rechEleve(int i){
 		int j=0;
-		enseignant res = null;
-		while (j<ens.size() && res == null){
-			if(ens.get(j).numen==num)
-				res = ens.get(j);
+		eleve res = null;
+		while (j<eleves.size() && res == null){
+			if(eleves.get(j).ine==i)
+				res = eleves.get(j);
 			j++;
 		}
 		return res;
 	}
-
 }
