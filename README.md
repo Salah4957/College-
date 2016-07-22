@@ -9,3 +9,5 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 * tester les fonctions
 * finir guide.md
 
+J'ai modifié le diagramme des classes : à vérifier
+
