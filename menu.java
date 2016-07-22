@@ -652,7 +652,7 @@ public class menu {
 		switch (r){
 		case 1:
 			break;
-		case 2:
+		case 2:ajoutEleve();
 			break;
 		case 3:ajoutEnseignant();
 			break;
