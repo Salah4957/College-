@@ -17,8 +17,7 @@ public class menu {
 			System.out.println("| 2 - Afficher le bulletin d'un élève  |");
 			System.out.println("| 3 - Effectuer un classement          |");
 			System.out.println("| 4 - Calculer une moyenne             |");
-			System.out.println("| 5 - Acces rapide                     |");
-			System.out.println("| 6 - Ajouter des données              |");
+			System.out.println("| 5 - Ajouter des données              |");
 			System.out.println("| 0 - Quitter                          |");
 			System.out.println("+--------------------------------------+");
 			System.out.println("Choix :");
@@ -35,16 +34,13 @@ public class menu {
 				break;
 			case 4:moyenne();
 				break;
-			case 5 : accesRapide();
-				break;
-			case 6 : ajout();
+			case 5 : ajout();
 				break;
 			case 0:
 				AuRevoir();
 				break;
 			default:
 				erreur();
-				
 			}
 		}
 		scan.close();
@@ -683,40 +679,6 @@ public class menu {
 					}
 				}
 	
-	//====================================================================================================================================================================================
-	//============================================================================ACCES RAPIDE============================================================================================
-	//====================================================================================================================================================================================
-	// pour accéder rapidement à des fonctions : signaler une absence (voir si on en ajoute d'autres)
-	
-	private static void accesRapide() {
-		int r;
-		r=1;
-		while (r!=0){
-		System.out.println("|=====ACCES RAPIDE=================|");
-		System.out.println("| 1 - Signaler une absence         |");
-		System.out.println("| 2 - Ajouter une nouvel élève     |");
-		System.out.println("| 3 - Ajouter un nouveau enseignant|");
-		System.out.println("| 0 - Quitter                      |");
-		System.out.println("+----------------------------------+");
-		System.out.println("Choix :");
-		
-		r = scan.nextInt();
-		scan.nextLine();
-		switch (r){
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:ajoutEnseignant();
-			break;
-		case 0:
-			break;
-		default: 
-			erreur();
-		}
-		}
-		
-	}
 	
 	//====================================================================================================================================================================================
 	//=============================================================================AJOUT DONNEES==========================================================================================
