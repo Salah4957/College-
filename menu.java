@@ -1,3 +1,5 @@
+package college;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -5,10 +7,10 @@ public class menu {
 	static 	Scanner scan = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		// recharger données de la BDD au début
-		// faire autant d'ajouts qu'il y a de lignes dans bdd vers chaque gestionnaire : 5 boucles
-		// pour la BDD on ne peut pas faire d'arraylist
-		// ex : table élève, classe = clé étrangère
+		bdd_lecture.connLectAllEleve();
+		bdd_lecture.connLectAllProf();
+		bdd_lecture.connLectAllClasse();
+		// menu principal
 		int i;
 		i =48;
 		while (i!=0){
@@ -786,6 +788,7 @@ public class menu {
 			gestionnaireEnseignants p = new gestionnaireEnseignants();
 			enseignant prof = new enseignant (nomP, prenomP, dateP, adresseP, numen, mat);
 			p.ajouteEnseignant(prof);
+			bdd_ajout.connexionAjoutProf(numen, nomP, prenomP, dateP, adresseP, mat, "TODO");
 		}
 	
 		// ajout classe
@@ -801,6 +804,7 @@ public class menu {
 			gestionnaireClasses college = new gestionnaireClasses();
 			classe classe6A = new classe(profP, niv, nomClasse);
 			college.ajouteClasse(classe6A);
+			bdd_ajout.connexionAjoutClasse(nomClasse, niv, profP);
 		}
 
 		// ajout élève
@@ -822,13 +826,16 @@ public class menu {
 			gestionnaireEleves g = new gestionnaireEleves();
 			eleve e6A1 = new eleve (nom, prenom, date, adresse, ine, abs);
 			g.ajouteEleve(e6A1);		
+			bdd_ajout.connexionAjoutEleve(ine, prenom, prenom, date, adresse, abs, "TODO");
 		}
 
-		private static void erreur() {
-			System.out.println("Erreur");
-		}
+	// erreur	
+	private static void erreur() {
+		System.out.println("Erreur");
+	}
 
-		private static void AuRevoir() {
-			System.out.println ("Au revoir");	
-		}	
+	// quitter
+	private static void AuRevoir() {
+		System.out.println ("Au revoir");	
+	}	
 }
