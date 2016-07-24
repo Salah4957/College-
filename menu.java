@@ -150,6 +150,7 @@ public class menu {
 			int ine = scan.nextInt();
 			scan.nextLine();
 			gestionnaireEleves g = new gestionnaireEleves();
+			g = bdd_lecture.connLectEleve(ine);
 			eleve e = g.rechEleve(ine);
 			if (e==null)
 				System.out.println("L'élève n'existe pas");
@@ -162,6 +163,7 @@ public class menu {
 			System.out.println("Saisir la classe");
 			String nomClasse = scan.nextLine();
 			gestionnaireClasses college = new gestionnaireClasses();
+			college = bdd_lecture.connEleveClasse(nomClasse);
 			classe c = college.rechClasse(nomClasse);
 			if (c==null)
 				System.out.println("La classe n'existe pas");
@@ -175,6 +177,7 @@ public class menu {
 			int niv = scan.nextInt();
 			scan.nextLine();
 			gestionnaireClasses college = new gestionnaireClasses();
+			college = bdd_lecture.connEleveNiveau(niv);
 			ArrayList<classe> n = college.rechNiveau(niv);
 			if (n==null)
 				System.out.println("Le niveau n'existe pas");
@@ -219,6 +222,7 @@ public class menu {
 			int numen = scan.nextInt();
 			scan.nextLine();
 			gestionnaireEnseignants p = new gestionnaireEnseignants();
+			p = bdd_lecture.connLectProf(numen);
 			enseignant ens = p.rechEnseignant(numen);
 			if (ens==null)
 				System.out.println("L'enseignant n'existe pas");
@@ -229,7 +233,8 @@ public class menu {
 		// afficher la liste des enseignants
 		private static void afficherListeEns() {
 			System.out.println("Liste des enseignants : ");
-			gestionnaireEnseignants p = new gestionnaireEnseignants(); 
+			gestionnaireEnseignants p = new gestionnaireEnseignants();
+			p = bdd_lecture.connListeProf();
 			ArrayList <enseignant> profs = p.ens;
 			if (profs.size()==0)
 				System.out.println("Aucun enseignant dans la liste");
@@ -244,6 +249,7 @@ public class menu {
 			int numen = scan.nextInt();
 			scan.nextLine();
 			gestionnaireEnseignants p = new gestionnaireEnseignants();
+			p = bdd_lecture.connLectProf(numen);
 			enseignant ens = p.rechEnseignant(numen);
 			if (ens==null)
 				System.out.println("L'enseignant n'existe pas");
@@ -255,12 +261,14 @@ public class menu {
 				System.out.println("Nouvelle matière: ");
 				String newMat = scan.nextLine();
 				gestionnaireMatieres m = new gestionnaireMatieres();
+				m = bdd_lecture.connListeMatiere();
 				matiere mat = m.rechMat(newMat);
 				if (mat == null){
 					mat = new matiere(newMat);
 					m.ajouteMatiere(mat);		
 				}
 				ens.setMatiere(mat);
+				bdd_lecture.connModifProf(numen, newAd, newMat);
 		}
 
 	// accès aux classes
@@ -295,6 +303,7 @@ public class menu {
 			System.out.println("Saisir le nom de la classe : ");
 			String classe = scan.nextLine();
 			gestionnaireClasses c = new gestionnaireClasses();
+			c = bdd_lecture.connLectClasse(classe);
 			classe cla = c.rechClasse(classe);
 			if (cla==null)
 				System.out.println("L'enseignant n'existe pas");
@@ -304,9 +313,10 @@ public class menu {
 			
 		// modifier une classe
 		private static void modifClasse() {
-			System.out.println("Saisir le nom de la classe à modifier : ");
+			System.out.println("Saisir le nom de la classe Ã  modifier : ");
 			String classe = scan.nextLine();
 			gestionnaireClasses c = new gestionnaireClasses();
+			c = bdd_lecture.connLectClasse(classe);
 			classe cla = c.rechClasse(classe);
 			if (cla==null)
 				System.out.println("La classe n'existe pas");
@@ -321,6 +331,7 @@ public class menu {
 				System.out.println("Nouveau professeur principal de la classe : ");
 				String newPp = scan.nextLine();
 				cla.setProfPrincipal(newPp);
+				bdd_lecture.connModifClasse(classe, newClasse, newNiv, newPp);
 			}
 		}
 		
@@ -359,6 +370,7 @@ public class menu {
 			System.out.println("Liste des matières :");
 			ArrayList <matiere> m = new ArrayList<matiere>();
 			gestionnaireMatieres mat = new gestionnaireMatieres();
+			mat = bdd_lecture.connListeMatiere();
 			if (m.size()==0) // si vide
 				System.out.println("Aucune matière dans la liste.");
 			else
@@ -368,9 +380,10 @@ public class menu {
 		
 		// modif liste matières
 		private static void modifMat() {
-			System.out.println("Matière à modifier :");
+			System.out.println("Matière à  modifier :");
 			String ma = scan.nextLine();
 			gestionnaireMatieres mat = new gestionnaireMatieres();
+			mat = bdd_lecture.connListeMatiere();
 			matiere m = mat.rechMat(ma);
 			if (m==null)
 				System.out.println("Aucun résultat trouvé");
@@ -378,6 +391,7 @@ public class menu {
 				System.out.println("Nouveau nom de la matière : ");
 				String newMat = scan.nextLine();
 				m.setNomMatiere(newMat);
+				bdd_lecture.connModifMat(ma, newMat);
 		}
 		
 
@@ -390,8 +404,10 @@ public class menu {
 		int ine = scan.nextInt();
 		scan.nextLine();
 		gestionnaireEleves g = new gestionnaireEleves();
+		g = bdd_lecture.connLectEleve(ine);
 		eleve e = g.rechEleve(ine);
 		gestionnaireClasses c = new gestionnaireClasses();
+		c = bdd_lecture.connClasseBulletin(ine);
 		classe cla = c.rechClasseEleve(ine);
 		// comment récupérer les matières : passer par l'arraylist enseignant dans classe?
 		if (e==null)
