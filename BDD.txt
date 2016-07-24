@@ -23,5 +23,6 @@ Note:
 
 Classe:
 - NomClasse (PRIMARY)
+- niveau
 - ProfPrincipal (FOREIGN)
 
