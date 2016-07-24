@@ -8,20 +8,21 @@ public class gestionnaireClasses {
 			classes = new ArrayList<classe>();
 	}
 	
-	//Ajouter une classe
+	// ajouter une classe
 	public void ajouteClasse(classe c){
 		classes.add(c);
 	}
 	
+	// afficher une classe
 	public String toString(){
 		String s= ""; 
 		for(classe c : classes){
 			s+=c.toString();
 		}
-	    return s;
-	     
+	    return s;    
 }
-	//Calculer la moyenne d'un niveau : moyenne des moyennes de chaque classe d'un même niveau
+	
+	// calculer la moyenne d'un niveau : moyenne des moyennes de chaque classe d'un même niveau
 	public Double moyenneNiveau(int niveau){
 		Double somme = 0.0;
 		int cptClassesNiv =0;
@@ -34,7 +35,7 @@ public class gestionnaireClasses {
 		return somme/cptClassesNiv;
 	}
 	
-	//Calculer la moyenne d'un niveau dans une matière : moyenne des moyennes de chaque classe d'un même niveau dans une matière
+	// calculer la moyenne d'un niveau dans une matière : moyenne des moyennes de chaque classe d'un même niveau dans une matière
 	public Double moyenneNiveauMat(int niveau, matiere m){
 		Double somme = 0.0;
 		int cptClassesNiv =0;
@@ -81,39 +82,39 @@ public class gestionnaireClasses {
 		return Classes; 
 	}
 	
-	// recherche Classe
-		public classe rechClasse(String c){
-			int i=0;
-			classe res = null;
-			while (i<classes.size() && res == null){
-				if(classes.get(i).nomClasse==c)
-					res = classes.get(i);
-				i++;
-			}
-			return res;
+	// recherche classe
+	public classe rechClasse(String c){
+		int i=0;
+		classe res = null;
+		while (i<classes.size() && res == null){
+			if(classes.get(i).nomClasse==c)
+				res = classes.get(i);
+			i++;
 		}
+		return res;
+	}
 		
-	// recherche Niveau
-			public ArrayList <classe> rechNiveau(int n){
-				int i=0;
-				ArrayList <classe> res = null;
-				while (i<classes.size() && res == null){
-					if(classes.get(i).niveau==n)
-						res.add(classes.get(i));
-					i++;
-				}
-				return res;
-			}
+	// recherche niveau
+	public ArrayList <classe> rechNiveau(int n){
+		int i=0;
+		ArrayList <classe> res = null;
+		while (i<classes.size() && res == null){
+			if(classes.get(i).niveau==n)
+				res.add(classes.get(i));
+			i++;
+		}
+		return res;
+	}
 			
-	// recherche Classe d'un élève
-			public classe rechClasseEleve(int n){
-				int i=0;
-				classe res = null;
-				while (i<classes.size() && res == null){
-					if(classes.get(i).rechEleve(n)==true)
-						res = classes.get(i);
-					i++;
-				}
-				return res;
-			}
+	// recherche classe d'un élève
+	public classe rechClasseEleve(int n){
+		int i=0;
+		classe res = null;
+		while (i<classes.size() && res == null){
+			if(classes.get(i).rechEleve(n)==true)
+				res = classes.get(i);
+			i++;
+		}
+		return res;
+	}
 }
