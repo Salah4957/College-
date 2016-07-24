@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class gestionnaireMatieres {
 	static ArrayList <matiere> mat = new ArrayList<matiere>();
 	
+	// ajotuer une matière
 	public void ajouteMatiere(matiere m){
 		mat.add(m);
 	}
 	
+	// afficher les matières
 	public String toString(){
 		String s= " "; 
 		for(matiere m : mat)
@@ -14,7 +16,7 @@ public class gestionnaireMatieres {
 	        return s;
 	}
 	
-	/**Recherche Matière**/
+	// rechercher une matière
 	public matiere rechMat(String m){
 		int i=0;
 		matiere res = null;
@@ -25,6 +27,4 @@ public class gestionnaireMatieres {
 		}
 		return res;
 	}
-	
-
 }
