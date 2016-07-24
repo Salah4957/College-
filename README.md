@@ -8,5 +8,8 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 * voir si la connexion à la BDD fonctionne
 * tester les fonctions
 
-J'ai modifié le diagramme des classes et compléter guide.md (Virginie) : à vérifier
-
+Ce qu'il faudra rendre : 
+* code commenté
+* document difficultés/avis sur le projet
+* guide utilisateur
+* très certainement les lignes de codes sql qui permettent d'obtenir les tableaux (5 create table)
