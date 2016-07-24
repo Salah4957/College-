@@ -17,8 +17,7 @@ public class eleve extends personne{
 		this.absence=absence;
 	}
 	
-	
-	// Afficher
+	// afficher un élève
 	public String toString(){
 		String s= super.nom+", "+super.prenom+", "+super.dateNaissance+", "+super.adresse+", "+ine; 
 		if (absence==0){
@@ -30,54 +29,56 @@ public class eleve extends personne{
 		return s;
 	}
 	
-	//Calculer la moyenne des notes (moy g)
-		public Double moyenne(){
-			gestionnaireNotes g = new gestionnaireNotes();
-			g.recupNotesEleve(this); // je veux cet élève 
-			ArrayList <note> notes = g.recupNotesEleve(this);
-			Double cumul = 0.0;
-			for (int i=0; i<notes.size(); i++){
-				cumul+=notes.get(i).valeurNote; // récupérer la valeur de la note à l'indice i de la liste notes
-			}
-			return cumul/notes.size();
+	// calculer la moyenne des notes (moyenne générale)
+	public Double moyenne(){
+		gestionnaireNotes g = new gestionnaireNotes();
+		g.recupNotesEleve(this); // je veux cet élève 
+		ArrayList <note> notes = g.recupNotesEleve(this);
+		Double cumul = 0.0;
+		for (int i=0; i<notes.size(); i++){
+			cumul+=notes.get(i).valeurNote; // récupérer la valeur de la note à l'indice i de la liste notes
 		}
+		return cumul/notes.size();
+	}
 		
-	//Calculer la moyenne des notes dans chaque matière
-		public Double moyenneMat(matiere m){
-			gestionnaireNotes g = new gestionnaireNotes();
-			ArrayList <note> notes = g.recupNotesEleveMat(this, m);
-			Double cumul = 0.0;
-			for (int i=0; i<notes.size(); i++){
-				cumul+=notes.get(i).valeurNote; // récupérer la valeur de la note à l'indice i de la liste notes
-			}
-			return cumul/notes.size();
+	// calculer la moyenne des notes dans chaque matière
+	public Double moyenneMat(matiere m){
+		gestionnaireNotes g = new gestionnaireNotes();
+		ArrayList <note> notes = g.recupNotesEleveMat(this, m);
+		Double cumul = 0.0;
+		for (int i=0; i<notes.size(); i++){
+			cumul+=notes.get(i).valeurNote; // récupérer la valeur de la note à l'indice i de la liste notes
 		}
+		return cumul/notes.size();
+	}
 	
-
-	// getter
-		public String getNomEleve(){
-			return this.nom;
-		}
-		
-		public String getPrenomEleve(){
-			return this.nom;
-		}
-		
-		public String getAdEleve(){
-			return this.adresse;
-		}
-		
-		public String getDateNaissanceEleve(){
-			return this.dateNaissance;
-		}
-		
-		public float getAbs(){
-			return this.absence;
-		}
-		
-		// setter
-		
-		public void setAbs(float x) {
-			absence = x;
-		}
+	// récupérer le nom d'un élève
+	public String getNomEleve(){
+		return this.nom;
+	}
+	
+	// récupérer le nom d'un élève
+	public String getPrenomEleve(){
+		return this.nom;
+	}
+	
+	// récupérer l'adresse d'un élève
+	public String getAdEleve(){
+		return this.adresse;
+	}
+	
+	// récupérer la date de naissance d'un élève
+	public String getDateNaissanceEleve(){
+		return this.dateNaissance;
+	}
+	
+	// récupérer le nombre d'asbence d'un élève
+	public float getAbs(){
+		return this.absence;
+	}
+	
+	// modifier le nombre d'asbence d'un élève
+	public void setAbs(float x) {
+		absence = x;
+	}
 }
