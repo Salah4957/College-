@@ -8,7 +8,7 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 * voir si la connexion à la BDD fonctionne
 * tester les fonctions
 
-Ce qu'il faudra rendre : 
+##Ce qu'il faudra rendre : 
 * code commenté
 * document difficultés/avis sur le projet
 * guide utilisateur
