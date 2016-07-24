@@ -20,6 +20,4 @@ public class matiere {
 	public void setNomMatiere(String nomMatiere) {
 		this.nomMatiere = nomMatiere;
 	}
-	
 }
-
