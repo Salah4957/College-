@@ -4,13 +4,13 @@ import java.sql.*;
 public class bdd_ajout {
 	//JDBC diver nom et database URL
 	static final String JDBC_DRIVER ="com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost/college";
+	static final String DB_URL = "jdbc:mysql://localhost:8889/college";
 	
 	//BDD IDs
 	static final String USER ="root";
-	static final String PWD="";
+	static final String PWD="root";
 	
-	public void connexionAjoutEleve(int ine, String nom, String prenom, String dateNaissance, String adresse, float absence, String nomClasse){
+	public static void connexionAjoutEleve(int ine, String nom, String prenom, String dateNaissance, String adresse, float absence, String nomClasse){
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -28,7 +28,8 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO eleve " +
-						 "VALUES ('"+nom+"', '"+dateNaissance+"', "+adresse+"', '"+absence+"', "+nomClasse+"')";
+						 "VALUES (" + ine + ",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+adresse+"', '"+absence+"', '"+nomClasse+"')";
+			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
@@ -61,7 +62,7 @@ public class bdd_ajout {
 		System.out.println("Fin connexion BDD...");
 	}
 	
-	public void connexionAjoutProf(int numen, String nom, String prenom, String dateNaissance, String adresse, String matiere, String nomClasse){
+	public static void connexionAjoutProf(int numen, String nom, String prenom, String dateNaissance, String adresse, matiere matiere, String nomClasse){
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -79,7 +80,7 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO enseignant " +
-						 "VALUES ('"+nom+"', '"+prenom+"', '"+dateNaissance+"', '"+adresse+"', '"+numen+"', '"+matiere+"', '"+nomClasse+"')";
+						 "VALUES (" + numen + ",'" +nom+"', '"+prenom+"', '"+dateNaissance+"', '"+adresse+"','"+matiere+"', '"+nomClasse+"')";
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
@@ -163,7 +164,7 @@ public class bdd_ajout {
 		System.out.println("Fin connexion BDD...");
 	}
 	
-	public void connexionAjoutClasse(String nomClasse, int numen){
+	public static void connexionAjoutClasse(String nomClasse, int niveau, String profPrincipal){
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -181,7 +182,7 @@ public class bdd_ajout {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO classe " +
-						 "VALUES ('"+nomClasse+"', '"+numen+"')";
+						 "VALUES ('"+nomClasse+"', '"+niveau+", '"+profPrincipal+"')";
 			stmt.executeUpdate(sql);
       
 			System.out.println("Données ajoutées dans la table...");
