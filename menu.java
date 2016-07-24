@@ -777,6 +777,7 @@ public class menu {
 			gestionnaireMatieres m = new gestionnaireMatieres();
 			matiere mat = new matiere(nomMat);
 			m.ajouteMatiere(mat);
+			bdd_ajout.connexionAjoutMatiere(nomMat);
 		
 	}
 		// ajout enseignant
@@ -793,18 +794,21 @@ public class menu {
 			String adresseP = scan.nextLine();
 			System.out.println("NUMEN : ");
 			int numen = scan.nextInt();
-			System.out.println("Matière: ");
+			System.out.println("MatiÃ¨re: ");
 			String matiere = scan.nextLine();
+			System.out.println("Classe: ");
+			String nClasse = scan.nextLine();
 			gestionnaireMatieres m = new gestionnaireMatieres();
+			gestionnaireEnseignants p = new gestionnaireEnseignants();
+			classe cla = new classe(nClasse);
 			matiere mat = m.rechMat(matiere);
 			if (mat == null){
 				mat = new matiere(matiere);
 				m.ajouteMatiere(mat);		
 			}
-			gestionnaireEnseignants p = new gestionnaireEnseignants();
-			enseignant prof = new enseignant (nomP, prenomP, dateP, adresseP, numen, mat);
+			enseignant prof = new enseignant (nomP, prenomP, dateP, adresseP, cla, numen, mat);
 			p.ajouteEnseignant(prof);
-			bdd_ajout.connexionAjoutProf(numen, nomP, prenomP, dateP, adresseP, mat, "TODO");
+			bdd_ajout.connexionAjoutProf(numen, nomP, prenomP, dateP, adresseP, matiere, nClasse);
 		}
 	
 		// ajout classe
@@ -839,10 +843,13 @@ public class menu {
 			int ine = scan.nextInt();
 			System.out.println("Nombre de demie journées d'absence: ");
 			Float abs = scan.nextFloat();
+			System.out.println("Classe: ");
+			String nClasse = scan.nextLine();
+			classe cla = new classe(nClasse);
 			gestionnaireEleves g = new gestionnaireEleves();
-			eleve e6A1 = new eleve (nom, prenom, date, adresse, ine, abs);
+			eleve e6A1 = new eleve (nom, prenom, date, adresse, cla, ine, abs);
 			g.ajouteEleve(e6A1);		
-			bdd_ajout.connexionAjoutEleve(ine, prenom, prenom, date, adresse, abs, "TODO");
+			bdd_ajout.connexionAjoutEleve(ine, prenom, prenom, date, adresse, abs, nClasse);
 		}
 
 	// erreur	
