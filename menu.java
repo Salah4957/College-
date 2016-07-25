@@ -1,4 +1,4 @@
-package college;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,11 +15,11 @@ public class menu {
 		i =48;
 		while (i!=0){
 			System.out.println("+----------------MENU------------------+");
-			System.out.println("| 1 - Affichage et gestion des données |");
-			System.out.println("| 2 - Afficher le bulletin d'un élève  |");
+			System.out.println("| 1 - Affichage et gestion des donnÃ©es |");
+			System.out.println("| 2 - Afficher le bulletin d'un Ã©lÃ¨ve  |");
 			System.out.println("| 3 - Effectuer un classement          |");
 			System.out.println("| 4 - Calculer une moyenne             |");
-			System.out.println("| 5 - Ajouter des données              |");
+			System.out.println("| 5 - Ajouter des donnÃ©es              |");
 			System.out.println("| 0 - Quitter                          |");
 			System.out.println("+--------------------------------------+");
 			System.out.println("Choix :");
@@ -49,19 +49,19 @@ public class menu {
 	}
 
 	//====================================================================================================================================================================================
-	//===============================================================================AFFICHAGE ET GESTION DES DONNÉES=====================================================================
+	//===============================================================================AFFICHAGE ET GESTION DES DONNÃ‰ES=====================================================================
 	//====================================================================================================================================================================================
-	// pour afficher les listes d'élèves, d'enseignants, des matières, des classes pour éventuellement les modifier ou supprimer des éléments de la liste
+	// pour afficher les listes d'Ã©lÃ¨ves, d'enseignants, des matiÃ¨res, des classes pour Ã©ventuellement les modifier ou supprimer des Ã©lÃ©ments de la liste
 		
 		private static void lister() {
 			int a;
 			a = 890;
 			while (a!=0){
-			System.out.println("|-Affichage et gestion des données-|");
-			System.out.println("|1 - Accès aux élèves              |");
-			System.out.println("|2 - Accès aux enseignants         |");
-			System.out.println("|3 - Accès aux matières            |");
-			System.out.println("|4 - Accès aux classes             |");
+			System.out.println("|-Affichage et gestion des donnÃ©es-|");
+			System.out.println("|1 - AccÃ¨s aux Ã©lÃ¨ves              |");
+			System.out.println("|2 - AccÃ¨s aux enseignants         |");
+			System.out.println("|3 - AccÃ¨s aux matiÃ¨res            |");
+			System.out.println("|4 - AccÃ¨s aux classes             |");
 			System.out.println("|0 - Quitter                       |");
 			System.out.println("|----------------------------------|");
 			System.out.println("Choix :");		
@@ -88,16 +88,16 @@ public class menu {
 			}
 		}
 	
-	// accès aux élèves
+	// accÃ¨s aux Ã©lÃ¨ves
 	private static void accesEleve() {
 		int m;
 		m = 18;
 		while (m!=0){
-		System.out.println("|----------Accès aux élèves-----------|");
-		System.out.println("|1 - Afficher un élève                |");
-		System.out.println("|2 - Afficher les élèves d'une classe |");
-		System.out.println("|3 - Afficher les élèves d'un niveau  |");
-		System.out.println("|4 - Modifier les données d'un élève  |");
+		System.out.println("|----------AccÃ¨s aux Ã©lÃ¨ves-----------|");
+		System.out.println("|1 - Afficher un Ã©lÃ¨ve                |");
+		System.out.println("|2 - Afficher les Ã©lÃ¨ves d'une classe |");
+		System.out.println("|3 - Afficher les Ã©lÃ¨ves d'un niveau  |");
+		System.out.println("|4 - Modifier les donnÃ©es d'un Ã©lÃ¨ve  |");
 		System.out.println("|0 - Quitter                          |");
 		System.out.println("|-------------------------------------|");
 		System.out.println("Choix :");
@@ -124,24 +124,26 @@ public class menu {
 		}
 	}
 	
-		// modifier les données d'un élève 
-		// le nom, le prénom, l'ine et la date de naissance ne sont pas modifiables
+		// modifier les donnÃ©es d'un Ã©lÃ¨ve 
+		// le nom, le prÃ©nom, l'ine et la date de naissance ne sont pas modifiables
 		private static void modifEleve() {
-			System.out.println("Saisir l'INE d'un élève");
+			System.out.println("Saisir l'INE d'un Ã©lÃ¨ve");
 			int ine = scan.nextInt();
 			scan.nextLine();
 			gestionnaireEleves g = new gestionnaireEleves();
+			g = bdd_lecture.connLectEleve(ine);
 			eleve e = g.rechEleve(ine);
 			if (e==null)
-				System.out.println("L'élève n'existe pas");
+				System.out.println("L'Ã©lÃ¨ve n'existe pas");
 			else
 				System.out.println(g.toString());	
 				System.out.println("Nouvelle adresse :"); 
 				String newAd = scan.nextLine();
 				e.setAd(newAd);
-				System.out.println("Mise à jour des absences :");
+				System.out.println("Mise Ã  jour des absences :");
 				float newAbs = scan.nextFloat();
 				e.setAbs(newAbs);
+				bdd_lecture.connModifEleve(ine, newAd, newAbs);
 		}
 
 		// afficher un élève
@@ -158,7 +160,7 @@ public class menu {
 				System.out.println(g.toString());	
 		}
 			
-		// afficher les élèves d'une classe
+		// afficher les élèves  d'une classe
 		private static void affElevesClasse() {
 			System.out.println("Saisir la classe");
 			String nomClasse = scan.nextLine();
@@ -185,15 +187,15 @@ public class menu {
 				System.out.println(college.toString());	
 		}
 		
-	//accès aux enseignants
+	//accÃ¨s aux enseignants
 	private static void accesEnseignant() {
 		int n;
 		n = 819;
 		while (n!=0){
-		System.out.println("|---------Accès aux enseignants-----------|");
+		System.out.println("|---------AccÃ¨s aux enseignants-----------|");
 		System.out.println("|1 - Afficher un enseignant               |");
 		System.out.println("|2 - Afficher la liste des enseignants    |");
-		System.out.println("|3 - Modifier les données d'un enseignant |");
+		System.out.println("|3 - Modifier les donnÃ©es d'un enseignant |");
 		System.out.println("|0 - Quitter                              |");
 		System.out.println("|-----------------------------------------|");
 		System.out.println("Choix :");
@@ -271,12 +273,12 @@ public class menu {
 				bdd_lecture.connModifProf(numen, newAd, newMat);
 		}
 
-	// accès aux classes
+	// accÃ¨s aux classes
 	private static void accesClasse() {
 		int y;
 		y =2783;
 		while (y!=0){
-		System.out.println("|---Accès aux classes----|");
+		System.out.println("|---AccÃ¨s aux classes----|");
 		System.out.println("|1 - Afficher une classe |");
 		System.out.println("|2 - Modifier une classe |");
 		System.out.println("|0 - Quitter             |");
@@ -335,12 +337,12 @@ public class menu {
 			}
 		}
 		
-	// accès aux matières
+	// accÃ¨s aux matiÃ¨res
 	public static void accesMat() {
 		int k;
 		k = 41191;
 		while (k!=0){
-		System.out.println("|----Liste des matières-----|");
+		System.out.println("|----Liste des matiÃ¨res-----|");
 		System.out.println("| 1 - Lister                |");
 		System.out.println("| 2 - Modifier              |");
 		System.out.println("| 0 - Quitter               |");
@@ -409,7 +411,7 @@ public class menu {
 		gestionnaireClasses c = new gestionnaireClasses();
 		c = bdd_lecture.connClasseBulletin(ine);
 		classe cla = c.rechClasseEleve(ine);
-		// comment récupérer les matières : passer par l'arraylist enseignant dans classe?
+		// comment récupèrer les matiéres : passer par l'arraylist enseignant dans classe?
 		if (e==null)
 			System.out.println("L'élève n'existe pas");
 		else
@@ -423,17 +425,17 @@ public class menu {
 			else
 			System.out.println("Classe : " +cla.getNomClasse() );
 			System.out.println("Prof principal: " + cla.getProfPrincipal());
-			System.out.println("Nombre d'absence: "+e.getAbs()+ "demie(s)journée(s)" );
+			System.out.println("Nombre d'absence: "+e.getAbs()+ "demie(s)journÃ©e(s)" );
 			for (enseignant p : cla.getEns()){
 				System.out.println( p.matiere+ " : " +e.moyenneMat(p.matiere));
 			}
-			System.out.println("Moyenne générale : " + e.moyenne() );
+			System.out.println("Moyenne gÃ©nÃ©rale : " + e.moyenne() );
 	}
 
 	//====================================================================================================================================================================================
 	//==============================================================================CLASSEMENT============================================================================================
 	//====================================================================================================================================================================================
-	// classement des élèves d'une classe, des classes dans un niveau, des élèves d'une classe dans une matière, des classes dans un niveau et dans une matière
+	// classement des Ã©lÃ¨ves d'une classe, des classes dans un niveau, des Ã©lÃ¨ves d'une classe dans une matiÃ¨re, des classes dans un niveau et dans une matiÃ¨re
 	private static void classement() {
 		int b;
 		b=1728;
@@ -441,7 +443,7 @@ public class menu {
 		System.out.println("|---------------Afficher les classements-----------------|");
 		System.out.println("| 1 - Afficher le classement dans une classe             |");
 		System.out.println("| 2 - Afficher le classement d'une classe dans un niveau |");
-		System.out.println("| 3 - Afficher le classement par matière                 |");
+		System.out.println("| 3 - Afficher le classement par matiÃ¨re                 |");
 		System.out.println("| 0 - Quitter                        	                 |");
 		System.out.println("|--------------------------------------------------------|");
 		System.out.println("Choix :");		
@@ -464,26 +466,28 @@ public class menu {
 		}
 		}
 	}
-		// classement des élèves d'une classe
+		// classement des Ã©lÃ¨ves d'une classe
 		private static void claClasseNiv() {
 			System.out.println("Classement des classes dans un niveau" );
 			System.out.println("Niveau : " );
 			int niveau = scan.nextInt();
 			scan.nextLine();
 			gestionnaireClasses c = new gestionnaireClasses();
+			c = bdd_lecture.connLectNiv(niveau);
 			ArrayList<classe> cla = c.rechNiveau(niveau);
 			if (cla.size()==0)
-				System.out.println("La matière n'existe pas");
+				System.out.println("La matiÃ¨re n'existe pas");
 			else
 				System.out.println(c.classementNiveau(niveau));
 		}
 		
 		// classement des classe dans un niveau
 		private static void claClasse() {
-			System.out.println("Classement des élèves dans une classe" );
+			System.out.println("Classement des Ã©lÃ¨ves dans une classe" );
 			System.out.println("Classe : " );
 			String classe = scan.nextLine();
 			gestionnaireClasses c = new gestionnaireClasses();
+			c = bdd_lecture.connLectClasse(classe);
 			classe cla = c.rechClasse(classe);
 			if (cla==null)
 				System.out.println("La classe n'existe pas");
@@ -496,9 +500,9 @@ public class menu {
 			int c;
 			c= 168902;
 			while (c!=0){
-			System.out.println("|--------------------Classement du matière--------------------------|");
-			System.out.println("| 1 - Afficher le classement par matière dans une classe            |");
-			System.out.println("| 2 - Afficher le classement par matière d'une classe dans un niveau|");
+			System.out.println("|--------------------Classement du matiÃ¨re--------------------------|");
+			System.out.println("| 1 - Afficher le classement par matiÃ¨re dans une classe            |");
+			System.out.println("| 2 - Afficher le classement par matiÃ¨re d'une classe dans un niveau|");
 			System.out.println("| 0 - Quitter                        	                            |");
 			System.out.println("|-------------------------------------------------------------------|");
 			System.out.println("Choix :");
@@ -519,45 +523,48 @@ public class menu {
 			}
 		}
 			
-		// classement des élèves d'une classe dans une matière
+		// classement des Ã©lÃ¨ves d'une classe dans une matiÃ¨re
 			private static void classementMatClasseNiv() {
-				System.out.println("Classement des classes par matière dans un niveau " );
+				System.out.println("Classement des classes par matiÃ¨re dans un niveau " );
 				System.out.println("Niveau : " );
 				int niv = scan.nextInt();
 				scan.nextLine();
-				System.out.println("Matière : " );
+				System.out.println("MatiÃ¨re : " );
 				String mat = scan.nextLine();
 				gestionnaireClasses c = new gestionnaireClasses();
+				c = bdd_lecture.connEleveNiveau(niv);
 				ArrayList <classe> cla = c.rechNiveau(niv);
 				gestionnaireMatieres m = new gestionnaireMatieres();
+				m = bdd_lecture.connListeMatiere();
 				matiere ma = m.rechMat(mat);
 				if (cla.size()==0)
 					System.out.println("Le niveau n'existe pas");
 				else{
 					if (mat==null)
-						System.out.println("La matière n'existe pas");
+						System.out.println("La matiÃ¨re n'existe pas");
 					else
 						System.out.println(c.classementNivMat(ma, niv));
 				}
 			}
 			
-			// classement des classes dans un niveau et dans une matière
+			// classement des classes dans un niveau et dans une matiÃ¨re
 			private static void classementMatClasse() {
 				
-				System.out.println("Classement des élèves d'une classe dans une matière " );
+				System.out.println("Classement des Ã©lÃ¨ves d'une classe dans une matiÃ¨re " );
 				System.out.println("Classe : " );
 				String classe = scan.nextLine();
-				System.out.println("Matière : " );
+				System.out.println("MatiÃ¨re : " );
 				String mat = scan.nextLine();
 				gestionnaireClasses c = new gestionnaireClasses();
 				classe cla = c.rechClasse(classe);
 				gestionnaireMatieres m = new gestionnaireMatieres();
+				m = bdd_lecture.connListeMatiere();
 				matiere ma = m.rechMat(mat);
 				if (cla==null)
 					System.out.println("La classe n'existe pas");
 				else{
 					if (mat==null)
-						System.out.println("La matière n'existe pas");
+						System.out.println("La matiÃ¨re n'existe pas");
 					else
 						System.out.println(cla.classementClasseMat(ma));
 				}
@@ -567,7 +574,7 @@ public class menu {
 	//====================================================================================================================================================================================
 	//================================================================================MOYENNE=============================================================================================
 	//====================================================================================================================================================================================
-	// calculer la moyenne des élèves d'une classe, d'une classe d'un niveau, des élèves d'une classe dans une matière, d'une classe dans une matière dans un niveau
+	// calculer la moyenne des Ã©lÃ¨ves d'une classe, d'une classe d'un niveau, des Ã©lÃ¨ves d'une classe dans une matiÃ¨re, d'une classe dans une matiÃ¨re dans un niveau
 	private static void moyenne() {
 		int m;
 		m = 19;
@@ -575,7 +582,7 @@ public class menu {
 		System.out.println("|-----------MOYENNE------------|");
 		System.out.println("| 1 - Moyenne d'une classe     |");
 		System.out.println("| 2 - Moyenne d'un niveau      |");
-		System.out.println("| 3 - Moyenne dans une matière |");
+		System.out.println("| 3 - Moyenne dans une matiÃ¨re |");
 		System.out.println("| 0 - Quitter                  |");
 		System.out.println("|------------------------------|");
 		System.out.println("Choix :");
@@ -599,13 +606,14 @@ public class menu {
 		}
 	}
 
-		// calculer la moyenne des élèves d'une classe
+		// calculer la moyenne des Ã©lÃ¨ves d'une classe
 		private static void moyNiv() {
 				System.out.println("Moyenne d'un niveau");
 				System.out.println("Niveau : ");
 				int niveau = scan.nextInt();
 				scan.nextLine();
 				gestionnaireClasses c = new gestionnaireClasses();
+				c = bdd_lecture.connMoyNiv(niveau);
 				ArrayList <classe> cla = c.rechNiveau(niveau);
 				if (cla.size()==0)
 					System.out.println("Le niveau n'existe pas");
@@ -619,6 +627,7 @@ public class menu {
 			System.out.println("Classe : ");
 			String classe = scan.nextLine();
 			gestionnaireClasses c = new gestionnaireClasses();
+			c = bdd_lecture.connMoyClasse(classe);
 			classe cla = c.rechClasse(classe);
 			if (cla==null)
 				System.out.println("La classe n'existe pas");
@@ -626,14 +635,14 @@ public class menu {
 				System.out.println(cla.moyenneClasse());	
 		}	
 		
-		// choix calcul moyenne dans un matière
+		// choix calcul moyenne dans un matiÃ¨re
 		private static void moyMat() {
 			int n;
 			n = 5783762;
 			while (n!=0){
-			System.out.println("|---------Moyenne dans une matière----------|");
-			System.out.println("| 1 - Moyenne d'une classe dans une matière |");
-			System.out.println("| 2 - Moyenne d'un niveau dans une matière  |");
+			System.out.println("|---------Moyenne dans une matiÃ¨re----------|");
+			System.out.println("| 1 - Moyenne d'une classe dans une matiÃ¨re |");
+			System.out.println("| 2 - Moyenne d'un niveau dans une matiÃ¨re  |");
 			System.out.println("| 0 - Quitter                               |");
 			System.out.println("|-------------------------------------------|");
 			System.out.println("Choix :");
@@ -654,44 +663,48 @@ public class menu {
 			}
 		}
 
-				// calculer la moyenne des élèves d'une classe dans une matière
+				// calculer la moyenne des Ã©lÃ¨ves d'une classe dans une matiÃ¨re
 				private static void moyNivMat() {
 					System.out.println("Moyenne d'une classe");
 					System.out.println("Niveau : ");
 					int niveau = scan.nextInt();
 					scan.nextLine();
-					System.out.println("Matière : ");
+					System.out.println("MatiÃ¨re : ");
 					String matiere = scan.nextLine();
 					gestionnaireClasses c = new gestionnaireClasses();
+					c = bdd_lecture.connLectNiv(niveau);
 					ArrayList <classe> cla = c.rechNiveau(niveau);
 					gestionnaireMatieres m = new gestionnaireMatieres();
+					m = bdd_lecture.connListeMatiere();
 					matiere mat = m.rechMat(matiere);
 					if (cla==null)
 						System.out.println("Le niveau n'existe pas");
 					else {
 						if (cla.size()==0)
-							System.out.println("La matière n'existe pas");
+							System.out.println("La matiÃ¨re n'existe pas");
 						else
 							System.out.println(c.moyenneNiveauMat(niveau, mat));
 					}
 				}
 				
-				// calculer la moyenne des classes d'un niveau dans une matière
+				// calculer la moyenne des classes d'un niveau dans une matiÃ¨re
 				private static void moyClasseMat() {
 					System.out.println("Moyenne d'une classe");
 					System.out.println("Classe : ");
 					String classe = scan.nextLine();
-					System.out.println("Matière : ");
+					System.out.println("MatiÃ¨re : ");
 					String matiere = scan.nextLine();
 					gestionnaireClasses c = new gestionnaireClasses();
+					c = bdd_lecture.connLectClasse(classe);
 					classe cla = c.rechClasse(classe);
 					gestionnaireMatieres m = new gestionnaireMatieres();
+					m = bdd_lecture.connListeMatiere();
 					matiere mat = m.rechMat(matiere);
 					if (cla==null)
 						System.out.println("La classe n'existe pas");
 					else {
 						if (mat==null)
-							System.out.println("La matière n'existe pas");
+							System.out.println("La matiÃ¨re n'existe pas");
 						else
 							System.out.println(cla.moyenneClasseMat(mat));
 					}
@@ -701,23 +714,23 @@ public class menu {
 	//====================================================================================================================================================================================
 	//=============================================================================AJOUT DONNEES==========================================================================================
 	//====================================================================================================================================================================================
-	// permet d'ajouter des élèves, enseignants, classes, matières et notes
+	// permet d'ajouter des Ã©lÃ¨ves, enseignants, classes, matiÃ¨res et notes
 	
 	private static void ajout() {
 		int j;
 		j=10;
 		while (j!=0){
-		System.out.println("|-----Ajouter des données--------|");
-		System.out.println("| 1 - Données élèves 			 |");
-		System.out.println("| 2 - Données enseignants        |");
-		System.out.println("| 3 - Données classes            |");
-		System.out.println("| 4 - Données matières           |");
-		System.out.println("| 5 - Données notes              |");
+		System.out.println("|-----Ajouter des donnÃ©es--------|");
+		System.out.println("| 1 - DonnÃ©es Ã©lÃ¨ves 			 |");
+		System.out.println("| 2 - DonnÃ©es enseignants        |");
+		System.out.println("| 3 - DonnÃ©es classes            |");
+		System.out.println("| 4 - DonnÃ©es matiÃ¨res           |");
+		System.out.println("| 5 - DonnÃ©es notes              |");
 		System.out.println("| 0 - Quitter                    |");
 		System.out.println("|--------------------------------|");
 		System.out.println("Choix :");		
 		j = scan.nextInt();
-		scan.nextLine(); // à mettre après chqque nexInt à cause du buffer
+		scan.nextLine(); // Ã  mettre aprÃ¨s chqque nexInt Ã  cause du buffer
 		switch (j){
 		case 1:
 			ajoutEleve();
@@ -751,6 +764,7 @@ public class menu {
 			System.out.println("Saisir l'élève (INE): ");
 			int ine = scan.nextInt();
 			gestionnaireEleves el = new gestionnaireEleves();
+			el = bdd_lecture.connLectEleve(ine);
 			eleve e = el.rechEleve(ine);
 			if (e == null){
 				System.out.println("L'élève n'est pas connu.");
@@ -759,14 +773,17 @@ public class menu {
 			System.out.println("Saisir la matière: ");
 			String nomMat = scan.nextLine();
 			gestionnaireMatieres m = new gestionnaireMatieres();
+			m = bdd_lecture.connListeMatiere();
 			matiere mat = m.rechMat(nomMat);
 			if (mat == null){
 				mat = new matiere(nomMat);
-				m.ajouteMatiere(mat);		
+				m.ajouteMatiere(mat);
+				bdd_ajout.connexionAjoutMatiere(nomMat);
 			}
 			gestionnaireNotes n = new gestionnaireNotes();
 			note note = new note(valeurNote, e, mat);
 			n.ajouter(note);
+			bdd_ajout.connexionAjoutNote(nomMat, ine, valeurNote);
 		}
 	
 		// ajout matière
@@ -862,3 +879,4 @@ public class menu {
 		System.out.println ("Au revoir");	
 	}	
 }
+
