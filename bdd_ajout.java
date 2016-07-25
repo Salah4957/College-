@@ -19,20 +19,20 @@ public class bdd_ajout {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");				  
+			  System.out.println("Connexion établie...");				  
 		
-			//Etape 4: Execution de la requÃªte
-			System.out.println("Insertion des donnÃ©es dans la table...");
+			//Etape 4: Execution de la requête
+			System.out.println("Insertion des données dans la table...");
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO eleve " +
 						 "VALUES (" + ine + ",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+adresse+"', '"+absence+"', '"+nomClasse+"')";
-			System.out.println("RequÃªte : "+sql);
+			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
-			System.out.println("DonnÃ©es ajoutÃ©es dans la table...");
+			System.out.println("Données ajoutées dans la table...");
 
 		}
 		catch(SQLException se){
@@ -44,7 +44,7 @@ public class bdd_ajout {
 			e.printStackTrace();
 		}
 		finally{
-			//bloc finally utilisÃ© pour fermer les ressources
+			//bloc finally utilisé pour fermer les ressources
 			try{
 				if(stmt!=null)
 				conn.close();
@@ -71,19 +71,19 @@ public class bdd_ajout {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");				  
+			  System.out.println("Connexion établie...");				  
 		
-			//Etape 4: Execution de la requÃªte
-			System.out.println("Insertion des donnÃ©es dans la table...");
+			//Etape 4: Execution de la requête
+			System.out.println("Insertion des données dans la table...");
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO enseignant " +
 						 "VALUES (" + numen + ",'" +nom+"', '"+prenom+"', '"+dateNaissance+"', '"+adresse+"','"+matiere+"', '"+nomClasse+"')";
 			stmt.executeUpdate(sql);
       
-			System.out.println("DonnÃ©es ajoutÃ©es dans la table...");
+			System.out.println("Données ajoutées dans la table...");
 
 		}
 		catch(SQLException se){
@@ -95,7 +95,7 @@ public class bdd_ajout {
 			e.printStackTrace();
 		}
 		finally{
-			//bloc finally utilisÃ© pour fermer les ressources
+			//bloc finally utilisé pour fermer les ressources
 			try{
 				if(stmt!=null)
 				conn.close();
@@ -122,19 +122,19 @@ public class bdd_ajout {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");				  
+			  System.out.println("Connexion établie...");				  
 		
-			//Etape 4: Execution de la requÃªte
-			System.out.println("Insertion des donnÃ©es dans la table...");
+			//Etape 4: Execution de la requête
+			System.out.println("Insertion des données dans la table...");
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO classe " +
 						 "VALUES ('"+nomClasse+"', '"+niveau+", '"+profPrincipal+"')";
 			stmt.executeUpdate(sql);
       
-			System.out.println("DonnÃ©es ajoutÃ©es dans la table...");
+			System.out.println("Données ajoutées dans la table...");
 
 		}
 		catch(SQLException se){
@@ -146,7 +146,7 @@ public class bdd_ajout {
 			e.printStackTrace();
 		}
 		finally{
-			//bloc finally utilisÃ© pour fermer les ressources
+			//bloc finally utilisé pour fermer les ressources
 			try{
 				if(stmt!=null)
 				conn.close();
@@ -173,19 +173,19 @@ public class bdd_ajout {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");				  
+			  System.out.println("Connexion établie...");				  
 		
-			//Etape 4: Execution de la requÃªte
-			System.out.println("Insertion des donnÃ©es dans la table...");
+			//Etape 4: Execution de la requête
+			System.out.println("Insertion des données dans la table...");
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO note " +
 						 "VALUES ('"+matiere+"', '"+ine+"', '"+note+"')";
 			stmt.executeUpdate(sql);
       
-			System.out.println("DonnÃ©es ajoutÃ©es dans la table...");
+			System.out.println("Données ajoutées dans la table...");
 
 		}
 		catch(SQLException se){
@@ -197,7 +197,7 @@ public class bdd_ajout {
 			e.printStackTrace();
 		}
 		finally{
-			//bloc finally utilisÃ© pour fermer les ressources
+			//bloc finally utilisé pour fermer les ressources
 			try{
 				if(stmt!=null)
 				conn.close();
@@ -224,19 +224,19 @@ public class bdd_ajout {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");				  
+			  System.out.println("Connexion établie...");				  
 		
-			//Etape 4: Execution de la requÃªte
-			System.out.println("Insertion des donnÃ©es dans la table...");
+			//Etape 4: Execution de la requête
+			System.out.println("Insertion des données dans la table...");
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO matiere " +
 						 "VALUES ('"+matiere+"')";
 			stmt.executeUpdate(sql);
       
-			System.out.println("DonnÃ©es ajoutÃ©es dans la table...");
+			System.out.println("Données ajoutées dans la table...");
 
 		}
 		catch(SQLException se){
@@ -248,7 +248,7 @@ public class bdd_ajout {
 			e.printStackTrace();
 		}
 		finally{
-			//bloc finally utilisÃ© pour fermer les ressources
+			//bloc finally utilisé pour fermer les ressources
 			try{
 				if(stmt!=null)
 				conn.close();
