@@ -23,12 +23,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT  ine, nom, prenom, dateNaissance, adresse, absence, nomClasse FROM eleve)";
@@ -73,13 +73,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -100,12 +100,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT  ine, nom, prenom, dateNaissance, adresse, absence, nomClasse FROM eleve WHERE ine='"+ID+"')";
@@ -140,13 +140,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -168,12 +168,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT  ine, nom, prenom, dateNaissance, adresse, absence, nomClasse FROM eleve WHERE nomClasse='"+nClas+"')";
@@ -212,13 +212,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -379,12 +379,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT numen, nom, prenom, dateNaissance, adresse, matiere, nomClasse FROM enseignant)";
@@ -398,7 +398,7 @@ public class bdd_lecture {
 		    	  String prenom = rs.getString("prenom");
 		    	  String dateNaissance = rs.getString("dateNaissance");
 		    	  String adresse = rs.getString("adresse");
-		    	  String mat = rs.getString("matiere"); // Ã  modifier : s'inspirer de menu.java ligne 782
+		    	  String mat = rs.getString("matiere"); // à modifier : s'inspirer de menu.java ligne 782
 		    	  matiere matiere = new matiere(mat);
 				  String nClasse = rs.getString("nomClasse");
 				  classe nomClasse = new classe (nClasse);
@@ -429,13 +429,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -456,12 +456,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT numen, nom, prenom, dateNaissance, adresse, matiere, nomClasse FROM enseignant WHERE numen='"+NUM+"')";
@@ -498,13 +498,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -526,12 +526,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT numen, nom, prenom, dateNaissance, adresse, matiere, nomClasse FROM enseignant)";
@@ -568,13 +568,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -663,12 +663,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT nomClasse, niveau, profPrincipal FROM classe)";
@@ -703,13 +703,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -730,12 +730,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT nomClasse, profPrincipal, niveau FROM classe WHERE nomClasse='"+nClasse+"')";
@@ -767,13 +767,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -859,12 +859,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT nomClasse, profPrincipal, niveau FROM classe WHERE niveau='"+niv+"')";
@@ -896,13 +896,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -927,12 +927,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT matiere, ine, note FROM classe WHERE ine='"+el+"')";
@@ -965,13 +965,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -997,12 +997,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT nomMatiere FROM matiere)";
@@ -1032,13 +1032,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
@@ -1126,12 +1126,12 @@ public class bdd_lecture {
 		      System.out.println("Driver O.K.");
 		      
 		    //Etape 3: Ouverture connexion
-		      System.out.println("Connexion Ã  la BDD...");
+		      System.out.println("Connexion à la BDD...");
 		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
-			  System.out.println("Connexion Ã©tablie...");
+			  System.out.println("Connexion établie...");
 		      
-		    //Etape 4: Execution de la requÃªte
-		      System.out.println("CrÃ©ation de la requÃªte...");
+		    //Etape 4: Execution de la requête
+		      System.out.println("Création de la requête...");
 		      stmt = conn.createStatement();
 		      String sql;
 		      sql = "(SELECT  ProfPrincipal, niveau, nomClasse.classe FROM eleve, classe WHERE nomClasse.eleve = nomClasse.classe AND ine='"+IN+"')";
@@ -1163,13 +1163,13 @@ public class bdd_lecture {
 		    	e.printStackTrace();
 		    }
 		    finally{
-		    	//bloc finally utilisÃ© pour fermer les ressources
+		    	//bloc finally utilisé pour fermer les ressources
 		    	try{
 		    		if(stmt != null)
 		    			stmt.close();
 		    	}
 		    	catch (SQLException se2){
-		    	}//rien Ã  faire
+		    	}//rien à faire
 		    	try{
 		    		if(conn != null)
 		    			conn.close();
