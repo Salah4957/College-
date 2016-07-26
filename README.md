@@ -11,5 +11,6 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 ##Ce qu'il faudra rendre : 
 * code commenté
 * document difficultés/avis sur le projet
-* guide utilisateur
-* très certainement les lignes de codes sql qui permettent d'obtenir les tableaux (5 create table)
+* guide.md
+* cahier des charges (avec diagramme des classes màj)
+* college.sql
