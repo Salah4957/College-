@@ -11,8 +11,8 @@ public class eleve extends personne{
 	}
 	
 	// constructeur 2
-	public eleve(String nom, String prenom,String adresse, String dateNaissance, int ine, float absence){
-		super(nom, prenom, adresse, dateNaissance);
+	public eleve(String nom, String prenom, String dateNaissance, String adresse, classe nomClasse, int ine, float absence){
+		super(nom, prenom, dateNaissance, adresse, nomClasse);
 		this.ine=ine;
 		this.absence=absence;
 	}
