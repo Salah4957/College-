@@ -10,11 +10,12 @@ public abstract class personne {
 		this.prenom=prenom;
 	}
 	
-	public personne(String nom, String prenom,String adresse, String dateNaissance){
+	public personne(String nom, String prenom, String dateNaissance, String adresse, classe nomClasse){
 		this.nom=nom;
 		this.prenom=prenom;
 		this.adresse=adresse;
 		this.dateNaissance=dateNaissance;
+		this.nomClasse=nomClasse;
 	}
 	
 	public String toString(){
