@@ -4,6 +4,10 @@ public abstract class personne {
 	public String adresse;
 	public String dateNaissance;
 	
+	public classe nomClasse;
+	
+	public personne(){
+	}
 	
 	public personne(String nom, String prenom){
 		this.nom=nom;
