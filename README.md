@@ -10,7 +10,7 @@ Dans le menu project/properties/java Build Path/Librairies Si les jars ou les re
 
 ##Ce qu'il faudra rendre : 
 * code commenté
-* document difficultés/avis sur le projet
+* CR java.doc : compte rendu projet (avis, difficultés)
 * guide.md
 * cahier des charges (avec diagramme des classes màj)
 * college.sql
