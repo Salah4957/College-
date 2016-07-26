@@ -11,6 +11,10 @@ public class classe {
 	public classe (){
 	}
 	
+	public classe (String nomClasse){
+		this.nomClasse= nomClasse;
+	}
+	
 	// constructeur 2
 	public classe (ArrayList eleve, ArrayList enseignant, String profPrincipal, int niveau, String nomClasse){
 		if(eleve != null)
