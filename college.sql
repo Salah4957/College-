@@ -34,6 +34,8 @@ CREATE TABLE IF NOT EXISTS `classe` (
   KEY `profPrincipal` (`profPrincipal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+
 -- --------------------------------------------------------
 
 --
@@ -109,3 +111,6 @@ CREATE TABLE IF NOT EXISTS `note` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+ALTER TABLE `eleve` ADD CONSTRAINT `Classe` FOREIGN KEY (`nomClasse`) REFERENCES `college`.`classe`(`nomClasse`) ON DELETE CASCADE ON UPDATE CASCADE;
