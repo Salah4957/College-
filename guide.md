@@ -240,7 +240,7 @@ A chaque ouverture du programme (menu.java), les données sont chargées en base
 
 ##Ajout enseignant
 1. Le système demande de saisir le nom de l'enseignant.
-2. L'utilsiateur saisit le nom de l'enseignant.
+2. L'utilisateur saisit le nom de l'enseignant.
 3. Le système demande de saisir le prénom de l'enseignant.
 4. L'utilisateur saisit le prénom de l'enseignant.
 5. Le système demande de saisir la date de naissance de l'enseignant.
